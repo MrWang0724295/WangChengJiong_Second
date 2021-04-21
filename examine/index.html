@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>掘金</title>
+    <link rel="shortcut icon" href="DIY.ico" />
+    <link rel="stylesheet" href="CSS/base.css">
+    <link rel="stylesheet" href="CSS/common.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/cover.css">
+    <link rel="stylesheet" href="CSS/intro.css">
+</head>
+
+<body>
+    <!-- 登录界面模块 -->
+    <div class="cover-box">
+        <div class="login-box">
+            <div class="panda">
+                <img src="./img/panda.png" alt="">
+            </div>
+            <div class="login-input-content">
+                <h1 class="login-title">账密登录</h1>
+                <div class="input-list">
+                    <div class="inp">
+                        <input type="text" placeholder="邮箱/手机号（国际号码加区号）">
+                    </div>
+                    <div class="inp">
+                        <input type="text" placeholder="请输入密码">
+                    </div>
+                </div>
+                <button class="login-btn">登录</button>
+                <div class="login-else">
+                    <span>手机登录</span>
+                    <span style="float: right;">忘记密码</span>
+                </div>
+            </div>
+            <div class="login-approach">
+                <div class="approach-bg">
+                    <img src="./img/wechat-one.png" alt="">
+                </div>
+                <div class="approach-bg">
+                    <img src="./img/weibo-one.png" alt="">
+                </div>
+                <div class="approach-bg">
+                    <img src="./img/github-one.png" alt="">
+                </div>
+            </div>
+            <div class="agree">
+
+                注册登录即表示同意
+                <a href="#" style="color: #007fff;">用户协议</a>、
+                <a href="#" style="color: #007fff;">隐私政策</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <!-- 头部公共模块 -->
+        <div class="main-header">
+            <div class="main-header-box">
+                <a href="#" class="logo">
+                    <img src="./img/logo.png" alt="">
+                </a>
+                <ul class="main-header-nav">
+                    <li class="nav-list">
+                        <ul class="nav-list-item">
+                            <li>
+                                <a href="#">首页</a>
+                            </li>
+                            <li>
+                                <a href="#">沸点</a>
+                            </li>
+                            <li>
+                                <a href="#">小册</a>
+                            </li>
+                            <li>
+                                <a href="#">活动</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-search">
+                        <div class="search-box">
+                            <input type="search" placeholder="探索掘金">
+                            <img src="./img/search-icon.png" alt="">
+                        </div>
+                    </li>
+                    <li class="nav-addition">
+                        <div class="addition-item">
+                            <button class="add-btn">写文章</button>
+                            <div class="more">
+                                <i class="more-icon">
+                                </i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-notify">
+                        <a href="#">
+                            <i class="notify-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-menu">
+                        <img src="https://sf1-ttcdn-tos.pstatp.com/img/user-avatar/3ea985da5382b68e84cec9746e09e1d6~300x300.image" alt="" class="user">
+                        <ul class="dropdown-list">
+                            <div class="nav-item-list">
+                                <li class="nav-item">
+                                    <a href="#">写文章</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#">草稿</a>
+                                </li>
+                            </div>
+                            <div class="nav-item-list">
+                                <li class="nav-item">
+                                    <a href="#">我的主页</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#">我赞过的</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#">我的小册</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#">我的收藏集</a>
+                                </li>
+                            </div>
+                            <div class="nav-item-list">
+                                <li class="nav-item">
+                                    <a href="#">字学</a>
+                                </li>
+                            </div>
+                            <div class="nav-item-list">
+                                <li class="nav-item">
+                                    <a href="#">设置</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#">关于</a>
+                                </li>
+                            </div>
+                            <div class="nav-item-list">
+                                <li class="nav-item">
+                                    <a href="#">登出</a>
+                                </li>
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 主页模块 -->
+        <div class="main-container main" style="display: none;">
+            <div class="main-container-box">
+                <div class="main-container-nav">
+                    <div class="nav-list">
+                        <a href="#" class="nav-item current">推荐</a>
+                        <a href="#" class="nav-item">关注</a>
+                        <a href="#" class="nav-item">前端</a>
+                        <a href="#" class="nav-item">后端</a>
+                        <a href="#" class="nav-item">Android</a>
+                        <a href="#" class="nav-item">iOS</a>
+                        <a href="#" class="nav-item">人工智能</a>
+                        <a href="#" class="nav-item">开发工具</a>
+                        <a href="#" class="nav-item">代码人生</a>
+                        <a href="#" class="nav-item">阅读</a>
+                        <a href="#" class="nav-item right">标签管理</a>
+                    </div>
+                </div>
+                <div class="main-container-detail">
+                    <div class="container-detail-list">
+                        <div class="detail-list-hd">
+                            <ul class="nav-list">
+                                <li class="nav-item current">
+                                    <a href="#">热门</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#">最新</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#">热榜</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="detail-list-bd">
+                            <ul class="entry-list">
+                                <li class="entry-list-item">
+                                    <div class="message-hd ">
+                                        <div class="author">
+                                            <a href="#">
+                                                来自格兰芬多的邦妮
+                                            </a>
+                                        </div>
+                                        <div class="spacer"></div>
+                                        <div class="date">
+                                            2小时前
+                                        </div>
+                                    </div>
+                                    <div class="message-bd">
+                                        <div class="info-box clearfix">
+                                            <a href="#" class="title">你有多久没有翻开过一本书了？</a>
+                                            <a href="#" class="introduction">100%获奖！掘金读书会，与我们一起读好书～</a>
+                                        </div>
+                                        <img src="./img/message-pic.png" alt="" class="message-pic">
+                                    </div>
+                                </li>
+                                <li class="entry-list-item">
+                                    <div class="message-hd ">
+                                        <div class="author">
+                                            <a href="#">
+                                                来自格兰芬多的邦妮
+                                            </a>
+                                        </div>
+                                        <div class="spacer"></div>
+                                        <div class="date">
+                                            2小时前
+                                        </div>
+                                    </div>
+                                    <div class="message-bd">
+                                        <div class="info-box clearfix">
+                                            <a href="#" class="title">你有多久没有翻开过一本书了？</a>
+                                            <a href="#" class="introduction">100%获奖！掘金读书会，与我们一起读好书～</a>
+                                        </div>
+                                        <img src="./img/message-pic.png" alt="" class="message-pic">
+                                    </div>
+                                </li>
+                                <li class="entry-list-item">
+                                    <div class="message-hd ">
+                                        <div class="author">
+                                            <a href="#">
+                                                来自格兰芬多的邦妮
+                                            </a>
+                                        </div>
+                                        <div class="spacer"></div>
+                                        <div class="date">
+                                            2小时前
+                                        </div>
+                                    </div>
+                                    <div class="message-bd">
+                                        <div class="info-box clearfix">
+                                            <a href="#" class="title">你有多久没有翻开过一本书了？</a>
+                                            <a href="#" class="introduction">100%获奖！掘金读书会，与我们一起读好书～</a>
+                                        </div>
+                                        <img src="./img/message-pic.png" alt="" class="message-pic">
+                                    </div>
+                                </li>
+                                <li class="entry-list-item">
+                                    <div class="message-hd ">
+                                        <div class="author">
+                                            <a href="#">
+                                                来自格兰芬多的邦妮
+                                            </a>
+                                        </div>
+                                        <div class="spacer"></div>
+                                        <div class="date">
+                                            2小时前
+                                        </div>
+                                    </div>
+                                    <div class="message-bd">
+                                        <div class="info-box clearfix">
+                                            <a href="#" class="title">你有多久没有翻开过一本书了？</a>
+                                            <a href="#" class="introduction">100%获奖！掘金读书会，与我们一起读好书～</a>
+                                        </div>
+                                        <img src="./img/message-pic.png" alt="" class="message-pic">
+                                    </div>
+                                </li>
+                                <li class="entry-list-item">
+                                    <div class="message-hd ">
+                                        <div class="author">
+                                            <a href="#">
+                                                来自格兰芬多的邦妮
+                                            </a>
+                                        </div>
+                                        <div class="spacer"></div>
+                                        <div class="date">
+                                            2小时前
+                                        </div>
+                                    </div>
+                                    <div class="message-bd">
+                                        <div class="info-box clearfix">
+                                            <a href="#" class="title">你有多久没有翻开过一本书了？</a>
+                                            <a href="#" class="introduction">100%获奖！掘金读书会，与我们一起读好书～</a>
+                                        </div>
+                                        <img src="./img/message-pic.png" alt="" class="message-pic">
+                                    </div>
+                                </li>
+                                <li class="entry-list-item">
+                                    <div class="message-hd ">
+                                        <div class="author">
+                                            <a href="#">
+                                                来自格兰芬多的邦妮
+                                            </a>
+                                        </div>
+                                        <div class="spacer"></div>
+                                        <div class="date">
+                                            2小时前
+                                        </div>
+                                    </div>
+                                    <div class="message-bd">
+                                        <div class="info-box clearfix">
+                                            <a href="#" class="title">你有多久没有翻开过一本书了？</a>
+                                            <a href="#" class="introduction">100%获奖！掘金读书会，与我们一起读好书～</a>
+                                        </div>
+                                        <img src="./img/message-pic.png" alt="" class="message-pic">
+                                    </div>
+                                </li>
+                                <li class="entry-list-item">
+                                    <div class="message-hd ">
+                                        <div class="author">
+                                            <a href="#">
+                                                来自格兰芬多的邦妮
+                                            </a>
+                                        </div>
+                                        <div class="spacer"></div>
+                                        <div class="date">
+                                            2小时前
+                                        </div>
+                                    </div>
+                                    <div class="message-bd">
+                                        <div class="info-box clearfix">
+                                            <a href="#" class="title">你有多久没有翻开过一本书了？</a>
+                                            <a href="#" class="introduction">100%获奖！掘金读书会，与我们一起读好书～</a>
+                                        </div>
+                                        <img src="./img/message-pic.png" alt="" class="message-pic">
+                                    </div>
+                                </li>
+                                <li class="entry-list-item">
+                                    <div class="message-hd ">
+                                        <div class="author">
+                                            <a href="#">
+                                                来自格兰芬多的邦妮
+                                            </a>
+                                        </div>
+                                        <div class="spacer"></div>
+                                        <div class="date">
+                                            2小时前
+                                        </div>
+                                    </div>
+                                    <div class="message-bd">
+                                        <div class="info-box clearfix">
+                                            <a href="#" class="title">你有多久没有翻开过一本书了？</a>
+                                            <a href="#" class="introduction">100%获奖！掘金读书会，与我们一起读好书～</a>
+                                        </div>
+                                        <img src="./img/message-pic.png" alt="" class="message-pic">
+                                    </div>
+                                </li>
+                                <li class="entry-list-item">
+                                    <div class="message-hd ">
+                                        <div class="author">
+                                            <a href="#">
+                                                来自格兰芬多的邦妮
+                                            </a>
+                                        </div>
+                                        <div class="spacer"></div>
+                                        <div class="date">
+                                            2小时前
+                                        </div>
+                                    </div>
+                                    <div class="message-bd">
+                                        <div class="info-box clearfix">
+                                            <a href="#" class="title">你有多久没有翻开过一本书了？</a>
+                                            <a href="#" class="introduction">100%获奖！掘金读书会，与我们一起读好书～</a>
+                                        </div>
+                                        <img src="./img/message-pic.png" alt="" class="message-pic">
+                                    </div>
+                                </li>
+                                <li class="entry-list-item">
+                                    <div class="message-hd ">
+                                        <div class="author">
+                                            <a href="#">
+                                                来自格兰芬多的邦妮
+                                            </a>
+                                        </div>
+                                        <div class="spacer"></div>
+                                        <div class="date">
+                                            2小时前
+                                        </div>
+                                    </div>
+                                    <div class="message-bd">
+                                        <div class="info-box clearfix">
+                                            <a href="#" class="title">你有多久没有翻开过一本书了？</a>
+                                            <a href="#" class="introduction">100%获奖！掘金读书会，与我们一起读好书～</a>
+                                        </div>
+                                        <img src="./img/message-pic.png" alt="" class="message-pic">
+                                    </div>
+                                </li>
+                                <li class="entry-list-item">
+                                    <div class="message-hd ">
+                                        <div class="author">
+                                            <a href="#">
+                                                来自格兰芬多的邦妮
+                                            </a>
+                                        </div>
+                                        <div class="spacer"></div>
+                                        <div class="date">
+                                            2小时前
+                                        </div>
+                                    </div>
+                                    <div class="message-bd">
+                                        <div class="info-box clearfix">
+                                            <a href="#" class="title">你有多久没有翻开过一本书了？</a>
+                                            <a href="#" class="introduction">100%获奖！掘金读书会，与我们一起读好书～</a>
+                                        </div>
+                                        <img src="./img/message-pic.png" alt="" class="message-pic">
+                                    </div>
+                                </li>
+                                <li class="entry-list-item">
+                                    <div class="message-hd ">
+                                        <div class="author">
+                                            <a href="#">
+                                                来自格兰芬多的邦妮
+                                            </a>
+                                        </div>
+                                        <div class="spacer"></div>
+                                        <div class="date">
+                                            2小时前
+                                        </div>
+                                    </div>
+                                    <div class="message-bd">
+                                        <div class="info-box clearfix">
+                                            <a href="#" class="title">你有多久没有翻开过一本书了？</a>
+                                            <a href="#" class="introduction">100%获奖！掘金读书会，与我们一起读好书～</a>
+                                        </div>
+                                        <img src="./img/message-pic.png" alt="" class="message-pic">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="aside">
+                        <div class="sidebar sidebar-app">
+                            <img src="./img/ad.png" alt="" class="ad-img">
+                            <div class="app-stall">
+                                <img src="./img/app.png" alt="" class="app-pic">
+                                <div class="app-content">
+                                    <div class="app-content-hd">下载掘金客户端</div>
+                                    <div class="app-content-bd">解锁更多技术团队热招职位</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sidebar sidebar-user">
+                            <div class="user-hd">🎖️作者榜</div>
+                            <div class="user-bd">
+                                <div class="user-item">
+                                    <a href="#">
+                                        <img src="https://sf6-ttcdn-tos.pstatp.com/img/user-avatar/bfc66a5d7055015e8c7f6b7944dfe747~300x300.image" alt="">
+
+                                        <div class="user-info">
+                                            <div class="username">
+                                                <span class="name">我是十三</span>
+                                                <span class="level">
+                                                    <img src="./img/lv-four.png" alt="">
+                                                </span>
+                                            </div>
+                                            <p>高级开发工程师 @ newbee-ltd</p>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <div class="user-item">
+                                    <a href="#">
+                                        <img src="https://user-gold-cdn.xitu.io/2019/6/14/16b519612caadb3e?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" alt="">
+                                        <div class="user-info">
+                                            <div class="username">
+                                                <span class="name">
+                                                    58沈剑_架构师之路
+                                                </span>
+                                                <span class="level">
+                                                    <img src="./img/lv-four.png" alt="">
+                                                </span>
+                                            </div>
+                                            <p>
+                                                架构师 @ 58
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="user-item">
+                                    <a href="#">
+                                        <img src="https://user-gold-cdn.xitu.io/2020/6/8/17291de3aedb42c7?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" alt="">
+                                        <div class="user-info">
+                                            <div class="username">
+                                                <span class="name">
+                                                    XPoet
+                                                </span>
+                                                <span class="level">
+                                                    <img src="./img/lv-four.png" alt="">
+                                                </span>
+                                            </div>
+                                            <p>
+                                                前端开发
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="#" class="entire">
+                                    <span>完整榜单</span>
+                                    <i><strong></strong></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="sidebar sidebar-link">
+                            <ul class="link-list">
+                                <li class="link-item">
+                                    <a href="#" class="link">
+                                        <img src="./img/link-pic-one.png" alt="">
+                                        <span>掘金社区漫游指南</span>
+                                    </a>
+                                </li>
+                                <li class="link-item">
+                                    <a href="#" class="link">
+                                        <img src="./img/link-pic-two.png" alt="">
+                                        <span>下载掘金浏览器插件</span>
+                                    </a>
+                                </li>
+                                <li class="link-item">
+                                    <a href="#" class="link">
+                                        <img src="./img/link-pic-three.png" alt="">
+                                        <span>前往掘金翻译计划</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sidebar sidebar-more">
+                            <ul class="more-list">
+                                <li class="more-item" style="margin-left: 0;">
+                                    <a href="#">关于</a>
+                                </li>
+                                <li class="more-item">
+                                    <a href="#">营业执照</a>
+                                </li>
+                                <li class="more-item">
+                                    <a href="#">友情链接</a>
+                                </li>
+                                <li class="more-item">
+                                    <a href="#">更多文章</a>
+                                </li>
+                            </ul>
+                            <ul class="more-list">
+                                <li class="more-item" style="margin-left: 0;">
+                                    <a href="#">用户协议</a>
+                                </li>
+                                <li class="more-item">
+                                    <a href="#">隐私政策</a>
+                                </li>
+                                <li class="more-item">
+                                    <a href="#">使用指南</a>
+                                </li>
+                            </ul>
+                            <ul class="more-list">
+                                <li class="more-item" style="margin-left: 0;">
+                                    <a href="#">
+                                        京ICP备18012699号-3
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="more-list">
+                                <li class="more-item" style="margin-left: 0;">
+                                    <a href="#">
+                                        京公网安备11010802026719号
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="more-list">
+                                <li class="more-item" style="margin-left: 0;">
+                                    <a href="#">
+                                        版权所有：北京北比信息技术有限公司
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="more-list" style="height: 40px;">
+                                <li class="more-item" style="margin-left: 0;">
+                                    <a href="#">
+                                        公司地址：北京市海淀区信息路甲28号13层B座13B-5
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="more-list">
+                                <li class="more-item" style="margin-left: 0;">
+                                    <a href="#">
+                                        公司座机：010-83434395
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="more-list">
+                                <li class="more-item" style="margin-left: 0;">
+                                    <a href="#">
+                                        举报邮箱：feedback@xitu.io
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="more-list">
+                                <li class="more-item" style="margin-left: 0;">
+                                    <a href="#">
+                                        ©2021 掘金
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="platform">
+                                <li class="platform-item">
+                                    <a href="#">
+                                        <img src="./img/weibo.png" alt="">
+                                    </a>
+                                </li>
+                                <li class="platform-item">
+                                    <a href="#">
+                                        <img src="./img/wechat.png" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 个人主页模块 -->
+        <div class="self-information main">
+            <div class="major-information">
+                <div class="self-user-info">
+                    <img src="https://sf1-ttcdn-tos.pstatp.com/img/user-avatar/3ea985da5382b68e84cec9746e09e1d6~300x300.image" alt="">
+                    <div class="self-info-box">
+                        <div class="name">
+                            <h1>Ball</h1>
+                        </div>
+                        <div class="job">
+                            <span>No</span>
+                            <span>|</span>
+                            <span>No</span>
+                        </div>
+                        <div class="intro"></div>
+                    </div>
+                    <div class="self-edit-box">
+                        <div class="self-link"></div>
+                        <button class="edit-btn">编辑个人资料</button>
+                    </div>
+                </div>
+                <div class="self-list">
+                    <div class="list-hd">
+                        <a href="#" class="self-list-item">动态</a>
+                        <a href="#" class="self-list-item">文章</a>
+                        <a href="#" class="self-list-item">沸点</a>
+                        <a href="#" class="self-list-item">小册</a>
+                    </div>
+                    <div class="list-bd">
+                        <div class="empty-box">
+                            <img src="./img/empty.png" alt="">
+                            <div class="empty-text">这里什么都没有</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="minor-information">
+                <div class="follow-block">
+                    <div class="follow-item">
+                        <div class="follow-item-title">关注了</div>
+                        <div class="follow-item-count">0</div>
+                    </div>
+                    <div class="follow-item">
+                        <div class="follow-item-title">关注了</div>
+                        <div class="follow-item-count">0</div>
+                    </div>
+                </div>
+                <div class="more-block">
+                    <a href="#" class="more-item">
+                        <div class="more-item-title">收藏集</div>
+                        <div class="more-item-count">0</div>
+                    </a>
+                    <a href="#" class="more-item">
+                        <div class="more-item-title">关注标签</div>
+                        <div class="more-item-count">0</div>
+                    </a>
+                    <a href="#" class="more-item">
+                        <div class="more-item-title">加入于</div>
+                        <div class="more-item-count">2021-04-18</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
