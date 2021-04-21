@@ -1,0 +1,98 @@
+/* 登录界面模块 */
+
+.cover-box {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .3);
+    z-index: 5;
+}
+
+.panda img {
+    position: absolute;
+    top: -26px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10rem;
+    z-index: 6;
+}
+
+.login-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 390px;
+    font-size: 16px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 2px;
+}
+
+.login-title {
+    font-size: 18px;
+    margin: 0 0 30px;
+    color: #000;
+}
+
+.inp {
+    margin-bottom: 15px;
+}
+
+.inp input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e9e9e9;
+    border-radius: 2px;
+}
+
+.login-btn {
+    width: 100%;
+    height: 40px;
+    color: #fff;
+    background-color: #007fff;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.login-else {
+    margin: 15px 0 0;
+    color: #767676;
+}
+
+.login-else span {
+    color: #007fff;
+    cursor: pointer;
+}
+
+.login-approach {
+    height: 45px;
+    margin-top: 15px;
+    line-height: 20px;
+}
+
+.approach-bg {
+    float: left;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin: 0 20px;
+    background-color: #f4f8fb;
+}
+
+.approach-bg img {
+    width: 25px;
+    height: 25px;
+    transform: translate(10px, 10px);
+    cursor: pointer;
+}
+
+.agree {
+    font-size: 14px;
+    margin-top: 20px;
+}
