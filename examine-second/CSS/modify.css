@@ -1,0 +1,86 @@
+.main-container-modify {
+    position: relative;
+}
+
+.container-modify-list {
+    width: 700px;
+    position: relative;
+    padding: 30px 50px 80px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+.modify-hd {
+    font-size: 2em;
+    margin: 20px 0;
+    color: #000;
+}
+
+.modify-item {
+    display: flex;
+    align-items: center;
+    padding: 25px 0;
+    border-top: 1px solid #f1f1f1;
+}
+
+.modify-item .title {
+    width: 120px;
+    font-size: 16px;
+    color: #333;
+}
+
+.modify-item .inp-box {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.modify-item .inp-box .inp {
+    flex: 1;
+    display: inline-block;
+    font-size: 17px;
+}
+
+.modify-item .inp-box .modify {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.modify-item .inp-box .modify img {
+    height: 18px;
+    margin-right: 1px;
+    vertical-align: bottom;
+}
+
+.modify-item .inp-box .modify span {
+    font-size: 14px;
+    color: #007fff;
+}
+
+.pic-upload {
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.pic-upload img {
+    float: left;
+    width: 72px;
+    height: 72px;
+    margin-right: 24px;
+}
+
+.upload-tip span {
+    display: inline-block;
+    color: #909090;
+    font-size: 12px;
+    margin-bottom: 18px;
+}
+
+.upload-btn {
+    display: block;
+    border-radius: 2px;
+    padding: 6px 20px;
+    cursor: pointer;
+    background-color: #007fff;
+    color: #fff;
+}

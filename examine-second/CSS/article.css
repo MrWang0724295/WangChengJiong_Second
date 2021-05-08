@@ -1,0 +1,505 @@
+.article-content {
+    position: relative;
+    width: 700px;
+    background-color: #fff;
+    border-radius: 2px;
+    margin-bottom: 18px;
+    padding: 24px 24px;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.author-avatar {
+    margin-right: 12px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.author-info-content {
+    flex: 1;
+    height: 43px;
+}
+
+.author-info-content .username {
+    height: 22px;
+    margin-bottom: 4px;
+}
+
+.author-info-content .username>a {
+    display: inline-block;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+}
+
+.author-info-content .username>a .author-name {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+
+.author-info-content .username>a .level img {
+    width: 23px;
+    height: 18px;
+}
+
+.follow-btn {
+    width: 55px;
+    height: 26px;
+    font-size: 13px;
+    border: 1px solid #6cbd45;
+    color: #6cbd45;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.followed-btn {
+    width: 55px;
+    height: 26px;
+    font-size: 13px;
+    border: 1px solid #6cbd45;
+    color: #fff;
+    background-color: #6cbd45;
+    cursor: pointer;
+}
+
+.auth-arti-title {
+    margin: 9px 0;
+    font-size: 30px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.article-detail {
+    height: 100px;
+}
+
+.tip-list {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #e5e6eb;
+}
+
+.tip-item {
+    display: flex;
+    font-size: 14px;
+    margin-right: 16px;
+}
+
+.tip-item .tip-item-title {
+    margin-right: 12px;
+    font-weight: 500;
+    color: #222;
+}
+
+.tip-item .item {
+    display: flex;
+    margin: 0 8px 12px 0;
+    padding: 0 8px;
+    border-radius: 2px;
+    background-color: #fafafa;
+    color: #4e5969;
+    line-height: 20px;
+}
+
+.tip-item .item img {
+    width: 20px;
+    height: 20px;
+}
+
+.comment-box {
+    position: relative;
+    border-top: 1px solid #ebebeb;
+    padding-top: 16px;
+}
+
+.comment-inp {
+    display: flex;
+    position: relative;
+    padding: 12px 16px;
+    background-color: #fafbfc;
+    border-radius: 3px;
+    margin: 0 18px 16px;
+}
+
+.comment-inp #myAvatar {
+    margin: 5px 12px 0 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.inpBox {
+    position: relative;
+    flex: 1;
+}
+
+.myInp {
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
+}
+
+.myComment-inp {
+    position: relative;
+    width: 100%;
+    padding: 7px 12px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #17181a;
+}
+
+.inp-tip {
+    margin: 10px 0 0;
+}
+
+.inp-tip .emoji {
+    float: left;
+    width: 65px;
+    height: 22px;
+    font-size: 14px;
+    padding-top: 6px;
+    color: #027fff;
+    cursor: pointer;
+}
+
+.inp-tip .emoji img {
+    float: left;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.inp-tip .emoji span {
+    font-size: 14px;
+}
+
+.inp-tip .comment {
+    float: right;
+}
+
+.inp-tip .comment span {
+    color: #c2c2c2;
+    margin-right: 8px;
+    font-size: 13px;
+}
+
+.comment-btn {
+    font-size: 14px;
+    padding: 6px 16px;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #027fff;
+    cursor: pointer;
+    opacity: .4;
+}
+
+.myComment-btn {
+    font-size: 14px;
+    padding: 6px 16px;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #0371df;
+}
+
+.reply-btn {
+    font-size: 14px;
+    padding: 6px 16px;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #027fff;
+    cursor: pointer;
+    opacity: .4;
+}
+
+.myReply-btn {
+    font-size: 14px;
+    padding: 6px 16px;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #0371df;
+    cursor: pointer;
+}
+
+.comment-list {
+    margin: 0 20px 0 75px;
+}
+
+.comment-item {
+    display: flex;
+    margin-bottom: 14px;
+}
+
+.comment-item .auth-pic {
+    height: 33px;
+    margin-right: 10px;
+}
+
+.comment-item .auth-pic img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.comment-detail {
+    border-bottom: 1px solid #f1f1f1;
+    margin-left: .833rem;
+    flex: 1 1 auto;
+}
+
+.comment-detail .auth-name {
+    display: flex;
+    font-size: 14px;
+    line-height: 1.25;
+}
+
+.comment-detail .auth-name .commentator {
+    color: #000;
+}
+
+.comment-content,
+.myComment-content {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 14px;
+    color: #505050;
+    overflow: hidden;
+    white-space: pre-wrap;
+}
+
+.comment-detail .upDate {
+    display: flex;
+    margin-top: 7px;
+}
+
+.comment-detail .upDate>span {
+    font-size: 14px;
+    color: #8a9aa9;
+    cursor: default;
+}
+
+.myReply {
+    display: none;
+    position: relative;
+    height: 100px;
+    border-radius: 3px;
+    margin-top: 14px;
+    padding: 12px;
+    background-color: #fafbfc;
+}
+
+.form-box {
+    position: relative;
+}
+
+.reply-inp {
+    height: 2.3em;
+    padding: 7px 12px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #17181a;
+    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #007fff;
+    outline: none;
+}
+
+.reply-box {
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    color: #8a93a0;
+}
+
+.reply-box .user-thumbUp,
+.reply-box .replier-thumbUp {
+    display: flex;
+    width: 20px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.thumbUp {
+    font-family: 'icomoon';
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.reply-box .user-reply,
+.reply-box .replier-reply {
+    display: flex;
+    width: 20px;
+    height: 16px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.sub-comment-list {
+    background-color: #fafbfc;
+    border-radius: 3px;
+    margin: 12px 0;
+    padding: 12px 0 0 12px;
+}
+
+.comment-link {
+    display: flex;
+    padding: 12px 0 0;
+}
+
+.comment-link-box {
+    width: 100%;
+    font-size: 14px;
+    color: #17181a;
+    border-bottom: 1px solid #f1f1f1;
+    margin: 0 12px 12px 10px;
+}
+
+.comment-link-box .replier {
+    font-weight: 400;
+    font-size: 14px;
+    color: #333;
+}
+
+.comment-link-box .reply-content {
+    display: inline-block;
+    line-height: 15px;
+    margin-top: 6px;
+    overflow: hidden;
+    color: #505050;
+}
+
+.comment-link-box .reply {
+    display: flex;
+    margin-top: 7px;
+    font-size: 13px;
+    color: #8a93a0;
+}
+
+.user-content .user-item {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+}
+
+.user-content .user-item .user-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.user-content .user-item .user-box .username {
+    font-weight: 600;
+    color: #000;
+}
+
+.user-content .user-item .user-box .username .level {
+    margin-left: 5px;
+    vertical-align: bottom;
+}
+
+.user-content .user-item .user-box .else {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #72777b;
+}
+
+.user-attain {
+    display: flex;
+    margin-bottom: 10px;
+    padding: 0 16px;
+}
+
+.user-attain .content {
+    font-size: 16px;
+    color: #000;
+    margin-left: 10px;
+}
+
+.fixTool {
+    position: fixed;
+    margin-left: -90px;
+    top: 200px;
+}
+
+.fixTool .like,
+.fixTool .comment,
+.fixTool .collect,
+.fixTool .report,
+.fixTool .weibo,
+.fixTool .qq,
+.fixTool .wechat {
+    position: relative;
+    margin-bottom: 10px;
+    width: 36px;
+    height: 36px;
+    background-color: #fff;
+    background-position: 50%;
+    background: url(../img/thumbUp.png) no-repeat center;
+    background-size: 18px 18px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 4%);
+    cursor: pointer;
+}
+
+.arti-like-count,
+.arti-comment-count {
+    position: absolute;
+    top: 0;
+    left: 75%;
+    padding: .1rem .4rem;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1;
+    white-space: nowrap;
+    color: #fff;
+    background-color: #b2bac2;
+    border-radius: .7rem;
+    transform-origin: left top;
+    transform: scale(.75);
+}
+
+.fixTool .comment {
+    background: url(../img/comment.png) no-repeat center;
+    background-size: 18px 18px;
+}
+
+.fixTool .collect {
+    background: url(../img/collect.png) no-repeat center;
+    background-size: 18px 18px;
+}
+
+.fixTool .report {
+    background: url(../img/report.png) no-repeat center;
+    background-size: 18px 18px;
+}
+
+.fixTool .weibo {
+    background: url(../img/weibo-two.png) no-repeat center;
+    background-size: 18px 18px;
+}
+
+.fixTool .qq {
+    background: url(../img/qq-two.png) no-repeat center;
+    background-size: 18px 18px;
+}
+
+.fixTool .wechat {
+    background: url(../img/wechat-two.png) no-repeat center;
+    background-size: 18px 18px;
+}
+
+.fixTool .share {
+    margin: 30px 0 12px;
+    font-size: 12px;
+    text-align: center;
+    color: #c6c6c6;
+}

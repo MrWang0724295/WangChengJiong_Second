@@ -1,0 +1,357 @@
+/* 个人主页模块 */
+
+.self-information {
+    margin-top: 90px;
+}
+
+.major-information {
+    position: relative;
+    width: 690px;
+}
+
+.major-information .self-user-info {
+    display: flex;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
+}
+
+.self-user-info img {
+    flex: 1;
+    margin-right: 35px;
+    width: 90px;
+    height: 90px;
+    background-color: #f9f9f9;
+    border-radius: 50%;
+}
+
+.self-info-box {
+    flex: 5;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 25px;
+}
+
+.self-info-box .intro-top {
+    margin-bottom: 15px;
+}
+
+.self-info-box .intro-top .self-username {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 30px;
+    color: #000;
+}
+
+.self-info-box .intro-middle,
+.self-info-box .intro-bottom {
+    font-size: 16px;
+    line-height: 26px;
+    color: #72777b;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.self-info-box .intro-bottom .self-info::before {
+    font-family: 'icomoon';
+    content: "\ec99";
+    vertical-align: top;
+    margin-right: 8px;
+}
+
+.self-edit-box {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.self-edit-box .self-link {
+    margin-bottom: 20px;
+}
+
+.self-edit-box .edit-btn {
+    margin: 10px 0 0;
+    width: 118px;
+    height: 34px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 34px;
+    border: 1px solid;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #3780f7;
+}
+
+.self-list {
+    margin-top: 10px;
+    background-color: #fff;
+}
+
+.self-list .list-hd {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    max-width: 960px;
+    border-radius: 3px 3px 0 0;
+    background-color: #fff;
+    border-bottom: 1px solid #ebebeb;
+    z-index: 4;
+}
+
+.self-list-item {
+    display: flex;
+    font-family: 'icomoon';
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 90px;
+    height: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    color: #31445b;
+    cursor: pointer;
+}
+
+.self-list-item.current {
+    color: #3780f7;
+    box-shadow: inset 0 -2px 0 #3780f7;
+}
+
+.item-thumb em,
+.item-more em {
+    margin-left: 5px;
+    font-size: 15px;
+    color: #b2bac2;
+}
+
+.item-thumb .arr-down,
+.item-more .arr-down {
+    display: inline-block;
+    font-family: 'icomoon';
+    font-weight: 700;
+    color: #b2bac2;
+    padding-bottom: 6px;
+}
+
+.item-thumb .more,
+.item-more .more {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin: 0 0 0 -3.75rem;
+    padding: .6rem 0;
+    width: 7.5rem;
+    background-color: #fff;
+    border: 1px solid #f3f3f4;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 5%);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.item-thumb .more .more-item,
+.item-more .more .more-item {
+    display: block;
+    padding: .6rem 0;
+    font-size: 1.25rem;
+    text-align: center;
+    color: #222;
+}
+
+.item-thumb .more::after,
+.item-more .more::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 35px;
+    border: 6px solid transparent;
+    border-top: none;
+    border-bottom: 6px solid #fff;
+}
+
+.empty-box {
+    position: relative;
+    height: 200px;
+    padding: 45px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #b2bac2;
+    cursor: default;
+}
+
+.empty-box img {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    width: 66px;
+    height: 66px;
+}
+
+.empty-text {
+    position: absolute;
+    left: 50%;
+    top: 68%;
+    transform: translate(-50%, -50%);
+}
+
+.following-box,
+.article-box {
+    background-color: #fff;
+}
+
+.following-hd,
+.article-box-hd {
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    height: 50px;
+    border-bottom: 2px solid #e6e6e780;
+}
+
+.following-hd .title,
+.article-box-hd .title {
+    margin-right: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+}
+
+.following-hd-list,
+.article-hd-list {
+    margin-left: auto;
+}
+
+.following-hd-item,
+.article-hd-item {
+    position: relative;
+    padding: 12px 0;
+    font-size: 14px;
+    color: #72777b;
+    margin-right: 2rem;
+}
+
+.following-bd .user-item {
+    display: flex;
+    align-items: center;
+    padding: 6PX 25px;
+    min-height: 90px;
+    cursor: pointer;
+}
+
+.user-article-item {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 20px 10px;
+    border-bottom: 1px solid #e5e6eb;
+}
+
+.following-bd .user-item .avatar {
+    margin-right: 15px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.following-bd .user-item .info-box .username {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2e3135;
+}
+
+.following-bd .user-item .info-box .name {
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.following-bd .user-item .info-box .level {
+    margin-left: 4px;
+}
+
+.following-bd .user-item .info-box .detail {
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #b9c0c8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.follow {
+    width: 90px;
+    height: 30px;
+    font-size: 12px;
+    border: 1px solid #92c452;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #92c452;
+}
+
+.minor-information {
+    position: fixed;
+    margin-left: 720px;
+    top: 90px;
+    width: 240px;
+}
+
+.follow-block {
+    position: relative;
+    display: flex;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.follow-block::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 50%;
+    background-color: #ccc;
+    transform: translate(-50%, -50%);
+}
+
+.follow-item {
+    flex: 1;
+    height: 75px;
+    padding: 15px 0;
+    text-align: center;
+    color: #31445b;
+    cursor: pointer;
+}
+
+.follow-item-title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.follow-item-count {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.more-block .more-item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    padding: 20px 5px;
+    font-size: 16px;
+    color: #000;
+    border-top: 1px solid rgba(230, 230, 231, .5);
+}
+
+.more-item-title,
+.more-item-count {
+    display: inline-block;
+}
