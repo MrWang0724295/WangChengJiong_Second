@@ -1,0 +1,113 @@
+.editor-header {
+    display: flex;
+    align-items: center;
+    padding: 0 27px;
+    height: 60px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.uploadPic {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+}
+
+.editor-header-input {
+    flex: 1 1 auto;
+    height: 100%;
+    font-size: 24px;
+    font-weight: 500;
+    color: #1d2129;
+}
+
+.right-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.auto-saved {
+    font-size: 14px;
+    white-space: nowrap;
+    color: #c9cdd4;
+    cursor: default;
+    margin: 0 8px;
+}
+
+.draft-btn {
+    height: 32px;
+    font-size: 14px;
+    line-height: 22px;
+    border: 1px solid #1d7dfa;
+    border-radius: 2px;
+    margin: 0 8px;
+    padding: 2px 16px;
+    cursor: pointer;
+    color: #1d7dfa;
+    background-color: #fff;
+}
+
+.publish-btn {
+    height: 32px;
+    font-size: 14px;
+    line-height: 22px;
+    border: 1px solid #1d7dfa;
+    border-radius: 2px;
+    background-color: #1d7dfa;
+    color: #fff;
+    margin: 0 8px;
+    padding: 2px 16px;
+    cursor: pointer;
+}
+
+.editor-header .editor-nav-menu {
+    padding: 0;
+}
+
+.toolbar {
+    width: 100%;
+    height: 35px;
+    background-color: #1d2129;
+}
+
+.editor-body {
+    height: 862px;
+}
+
+.editor-inp {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.textInp {
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+    line-height: 1.5;
+    padding: 25px 100px;
+    color: #000;
+    background: #f8f9fa;
+    resize: unset;
+}
+
+.editor-preview {
+    display: inline-block;
+    font-size: 25px;
+    width: 50%;
+    height: 100%;
+    vertical-align: top;
+    border-left: 1px solid #e1e4e8;
+}
+
+.textContent {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 25px 100px;
+    resize: unset;
+}

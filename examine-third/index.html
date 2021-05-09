@@ -1,0 +1,2064 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>掘金</title>
+    <link rel="shortcut icon" href="DIY.ico" />
+    <link rel="stylesheet" href="CSS/base.css">
+    <link rel="stylesheet" href="CSS/common.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/cover.css">
+    <link rel="stylesheet" href="CSS/intro.css">
+    <link rel="stylesheet" href="CSS/modify.css">
+    <link rel="stylesheet" href="CSS/article.css">
+    <link rel="stylesheet" href="CSS/editor.css">
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/selfInfo.js"></script>
+</head>
+
+<body>
+    <!-- 个人主页模块 -->
+    <div class="self-information main" style="display: none;">
+        <div class="major-information">
+            <div class="self-user-info">
+                <img src="" id="myAvatar" class="authAvatar">
+                <div class="self-info-box">
+                    <div class="intro-top">
+                        <h1 class="self-username"></h1>
+                    </div>
+                    <div class="intro-middle">
+                        <span>NO</span>
+                        <span>|</span>
+                        <span>NO</span>
+                    </div>
+                    <div class="intro-bottom">
+                        <span class="self-info"></span>
+                    </div>
+                </div>
+                <div class="self-edit-box">
+                    <div class="self-link"></div>
+                    <button class="edit-btn">编辑个人资料</button>
+                </div>
+            </div>
+            <div class="self-list">
+                <div class="list-hd">
+                    <a href="#" class="self-list-item current">动态</a>
+                    <a href="#" class="self-list-item">小册</a>
+                    <a href="#" class="self-list-item">沸点</a>
+                    <a href="#" class="self-list-item">文章</a>
+                    <div class="self-list-item item-thumb" id="more-list">赞
+
+                        <i class="arr-down"></i>
+                        <div class="more" style="display: none;">
+                            <a href="#" class="more-item" id="myLike-item">文章</a>
+                            <a href="#" class="more-item">沸点</a>
+                        </div>
+                    </div>
+                    <div class="self-list-item item-more" id="more-list">更多
+
+                        <i class="arr-down"></i>
+                        <div class="more" style="display: none;">
+                            <a href="#" class="more-item">收藏集</a>
+                            <a href="#" class="more-item" id="myFollowing-item">关注</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-bd">
+                    <div class="empty-box" style="display: none;">
+                        <img src="./img/empty.png" alt="">
+                        <div class="empty-text">这里什么都没有</div>
+                    </div>
+                    <div class="following-box" style="display: none;">
+                        <div class="following-hd">
+                            <div class="title">关注</div>
+                            <div class="following-hd-list">
+                                <a href="#" class="following-hd-item theFollowing">关注的用户</a>
+                                <a href="#" class="following-hd-item">关注的团队</a>
+                                <a href="#" class="following-hd-item theFollowed">关注者</a>
+                                <a href="#" class="following-hd-item" style="margin-right:0">关注标签</a>
+                            </div>
+                        </div>
+                        <div class="following-bd">
+                            <ul class="following-user-list" style="display: none;">
+
+                            </ul>
+                            <ul class="followed-user-list" style="display: none;">
+
+                            </ul>
+                        </div>
+                        <div class="moreEmpty-box">
+                            <img src="./img/empty.png" alt="">
+                            <div class="empty-text">这里什么都没有</div>
+                        </div>
+                    </div>
+                    <div class="article-box" style="display: none;">
+                        <div class="article-box-hd">
+                            <div class="title">文章</div>
+                            <div class="article-hd-list">
+                                <a href="#" class="article-hd-item ">最新</a>
+                                <a href="#" class="article-hd-item " style="margin-right:0">最热</a>
+                            </div>
+                        </div>
+                        <div class="article-body">
+                            <ul class="article-body-list">
+
+                            </ul>
+                        </div>
+                        <div class="moreEmpty-box" style="display: none;">
+                            <img src="./img/empty.png" alt="">
+                            <div class="empty-text">这里什么都没有</div>
+                        </div>
+                    </div>
+                    <div class="like-box" style="display: none;">
+                        <div class="like-box-hd">
+                            <div class="title">赞</div>
+                            <div class="like-hd-list">
+                                <a href="#" class="like-hd-item ">文章</a>
+                                <a href="#" class="like-hd-item " style="margin-right:0">沸点</a>
+                            </div>
+                        </div>
+                        <div class="like-body">
+                            <ul class="like-body-list">
+
+                            </ul>
+                        </div>
+                        <div class="empty-box" style="display: none;">
+                            <img src="./img/empty.png" alt="">
+                            <div class="empty-text">这里什么都没有</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="minor-information">
+            <div class="follow-block">
+                <div class="follow-item">
+                    <div class="follow-item-title">关注了</div>
+                    <div class="follow-item-count">0</div>
+                </div>
+                <div class="follow-item">
+                    <div class="follow-item-title">关注了</div>
+                    <div class="follow-item-count">0</div>
+                </div>
+            </div>
+            <div class="more-block">
+                <a href="#" class="more-item">
+                    <div class="more-item-title">收藏集</div>
+                    <div class="more-item-count">0</div>
+                </a>
+                <a href="#" class="more-item">
+                    <div class="more-item-title">关注标签</div>
+                    <div class="more-item-count">0</div>
+                </a>
+                <a href="#" class="more-item">
+                    <div class="more-item-title">加入于</div>
+                    <div class="more-item-count">2021-04-18</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 登录页面模块 -->
+    <div class="cover-box" style="display: none;">
+        <div class="login-box">
+            <div class="panda">
+                <img src="./img/panda.png" alt="">
+            </div>
+            <div class="login-input-content">
+                <h1 class="login-title">账密登录</h1>
+                <div class="input-list">
+                    <div class="inp">
+                        <input type="email" id="myEmail" placeholder="邮箱/手机号（国际号码加区号）">
+                    </div>
+                    <div class="inp">
+                        <input type="password" id="myPassword" placeholder="请输入密码">
+                    </div>
+                </div>
+                <button id="login-btn">登录</button>
+                <div class="login-else">
+                    <span>手机登录</span>
+                    <span style="float: right;">忘记密码</span>
+                </div>
+            </div>
+            <div class="login-approach">
+                <div class="approach-bg">
+                    <img src="./img/wechat-one.png" alt="">
+                </div>
+                <div class="approach-bg">
+                    <img src="./img/weibo-one.png" alt="">
+                </div>
+                <div class="approach-bg">
+                    <img src="./img/github-one.png" alt="">
+                </div>
+            </div>
+            <div class="agree">
+
+                注册登录即表示同意
+                <a href="#" style="color: #007fff;">用户协议</a>、
+                <a href="#" style="color: #007fff;">隐私政策</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 公共模块 -->
+    <div class="main-header">
+        <div class="main-header-box">
+            <a href="#" class="logo">
+                <img src="./img/logo.png" alt="">
+            </a>
+            <ul class="main-header-nav">
+                <li class="nav-list">
+                    <ul class="nav-list-item" id="homePage">
+                        <li>
+                            <a href="#">首页</a>
+                        </li>
+                        <li>
+                            <a href="#">沸点</a>
+                        </li>
+                        <li>
+                            <a href="#">小册</a>
+                        </li>
+                        <li>
+                            <a href="#">活动</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-search">
+                    <div class="search-box">
+                        <input type="search" placeholder="探索掘金">
+                        <img src="./img/search-icon.png" alt="">
+                    </div>
+                </li>
+                <li class="nav-addition">
+                    <div class="addition-item">
+                        <button class="add-btn">写文章</button>
+                        <div class="more">
+                            <i class="more-icon">
+                            </i>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-notify" style="display: none;">
+                    <a href="#">
+                        <i class="notify-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-menu" style="margin-right: 0;display: none;">
+                    <img src="" class="user" id="myAvatar">
+                    <ul class="dropdown-list" id="dropdown-list" style="display: none;">
+                        <div class="nav-item-list">
+                            <li class="nav-item">
+                                <a href="#">写文章</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">草稿</a>
+                            </li>
+                        </div>
+                        <div class="nav-item-list">
+                            <li class="nav-item myPage">
+                                <a href="#">我的主页</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">我赞过的</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">我的小册</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">我的收藏集</a>
+                            </li>
+                        </div>
+                        <div class="nav-item-list">
+                            <li class="nav-item">
+                                <a href="#">字学</a>
+                            </li>
+                        </div>
+                        <div class="nav-item-list">
+                            <li class="nav-item">
+                                <a href="#">设置</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">关于</a>
+                            </li>
+                        </div>
+                        <div class="nav-item-list" id="logout">
+                            <li class="nav-item" id="logout">
+                                <a href="#">登出</a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+                <li class="nav-login">
+                    <button class="login">登录</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 主页模块 -->
+    <div class="container">
+        <div class="main-container-nav">
+            <ul class="nav-list">
+                <a href="#" class="nav-item current">推荐</a>
+                <a href="#" class="nav-item">关注</a>
+                <a href="#" class="nav-item">前端</a>
+                <a href="#" class="nav-item">后端</a>
+                <a href="#" class="nav-item">Android</a>
+                <a href="#" class="nav-item">ioS</a>
+                <a href="#" class="nav-item">人工智能</a>
+                <a href="#" class="nav-item">开发工具</a>
+                <a href="#" class="nav-item">代码人生</a>
+                <a href="#" class="nav-item">阅读</a>
+                <a href="#" class="nav-item right">标签管理</a>
+            </ul>
+        </div>
+        <div class="main-container main">
+
+            <div class="main-container-box">
+
+                <div class="container-detail">
+                    <div class="detail-list-hd">
+                        <ul class="nav-list">
+                            <li class="nav-item current">
+                                <a href="#">热门</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">最新</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">热榜</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="detail-list-bd">
+                        <ul class="entry-list">
+                            <li class="entry-list-item">
+                                <div class="article-hd ">
+                                    <div class="author">
+                                        来自格兰芬多的邦妮
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="date">2小时前</div>
+                                </div>
+                                <div class="article-title">
+                                    <a href="#" class="articleTitle">你有多久没有翻开过一本书了？</a>
+                                </div>
+                                <div class="article-bd">
+                                    <div class="info-box">
+                                        <div class="article-info">
+                                            100%获奖！掘金读书会，与我们一起读好书～
+                                        </div>
+                                        <ul class="article-action">
+                                            <li class="likeBtn btn">
+                                                <i>
+                                                    <img src="./img/thumbUp_one.png" alt="" class="like">
+                                                </i>
+                                                <span class="thumbUp-count count"></span>
+                                            </li>
+                                            <li class="commentBtn btn">
+                                                <i>
+                                                    <img src="./img/comment-one.png" alt="">
+                                                </i>
+                                                <span class="comment-count count"></span>
+                                            </li>
+                                            <li class="dislikeBtn btn">
+                                                <i>
+                                                    <img src="./img/dislike_one.png" alt="" class="dislike">
+                                                </i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0c9249d9382745259da28c6c2612c23f~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp" alt="" class="article-pic">
+                                </div>
+                            </li>
+                            <li class="entry-list-item">
+                                <div class="article-hd ">
+                                    <div class="author">
+                                        来自格兰芬多的邦妮
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="date">2小时前</div>
+                                </div>
+                                <div class="article-title">
+                                    <a href="#" class="articleTitle">你有多久没有翻开过一本书了？</a>
+                                </div>
+                                <div class="article-bd">
+                                    <div class="info-box">
+                                        <div class="article-info">
+                                            100%获奖！掘金读书会，与我们一起读好书～
+                                        </div>
+                                        <ul class="article-action">
+                                            <li class="likeBtn btn">
+                                                <i>
+                                                    <img src="./img/thumbUp_one.png" alt="" class="like">
+                                                </i>
+                                                <span class="thumbUp-count count"></span>
+                                            </li>
+                                            <li class="commentBtn btn">
+                                                <i>
+                                                    <img src="./img/comment-one.png" alt="">
+                                                </i>
+                                                <span class="comment-count count"></span>
+                                            </li>
+                                            <li class="dislikeBtn btn">
+                                                <i>
+                                                    <img src="./img/dislike_one.png" alt="" class="dislike">
+                                                </i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0c9249d9382745259da28c6c2612c23f~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp" alt="" class="article-pic">
+                                </div>
+                            </li>
+                            <li class="entry-list-item">
+                                <div class="article-hd ">
+                                    <div class="author">
+                                        来自格兰芬多的邦妮
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="date">2小时前</div>
+                                </div>
+                                <div class="article-title">
+                                    <a href="#" class="articleTitle">你有多久没有翻开过一本书了？</a>
+                                </div>
+                                <div class="article-bd">
+                                    <div class="info-box">
+                                        <div class="article-info">
+                                            100%获奖！掘金读书会，与我们一起读好书～
+                                        </div>
+                                        <ul class="article-action">
+                                            <li class="likeBtn btn">
+                                                <i>
+                                                    <img src="./img/thumbUp_one.png" alt="" class="like">
+                                                </i>
+                                                <span class="thumbUp-count count"></span>
+                                            </li>
+                                            <li class="commentBtn btn">
+                                                <i>
+                                                    <img src="./img/comment-one.png" alt="">
+                                                </i>
+                                                <span class="comment-count count"></span>
+                                            </li>
+                                            <li class="dislikeBtn btn">
+                                                <i>
+                                                    <img src="./img/dislike_one.png" alt="" class="dislike">
+                                                </i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0c9249d9382745259da28c6c2612c23f~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp" alt="" class="article-pic">
+                                </div>
+                            </li>
+                            <li class="entry-list-item">
+                                <div class="article-hd ">
+                                    <div class="author">
+                                        来自格兰芬多的邦妮
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="date">2小时前</div>
+                                </div>
+                                <div class="article-title">
+                                    <a href="#" class="articleTitle">你有多久没有翻开过一本书了？</a>
+                                </div>
+                                <div class="article-bd">
+                                    <div class="info-box">
+                                        <div class="article-info">
+                                            100%获奖！掘金读书会，与我们一起读好书～
+                                        </div>
+                                        <ul class="article-action">
+                                            <li class="likeBtn btn">
+                                                <i>
+                                                    <img src="./img/thumbUp_one.png" alt="" class="like">
+                                                </i>
+                                                <span class="thumbUp-count count"></span>
+                                            </li>
+                                            <li class="commentBtn btn">
+                                                <i>
+                                                    <img src="./img/comment-one.png" alt="">
+                                                </i>
+                                                <span class="comment-count count"></span>
+                                            </li>
+                                            <li class="dislikeBtn btn">
+                                                <i>
+                                                    <img src="./img/dislike_one.png" alt="" class="dislike">
+                                                </i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0c9249d9382745259da28c6c2612c23f~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp" alt="" class="article-pic">
+                                </div>
+                            </li>
+                            <li class="entry-list-item">
+                                <div class="article-hd ">
+                                    <div class="author">
+                                        来自格兰芬多的邦妮
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="date">2小时前</div>
+                                </div>
+                                <div class="article-title">
+                                    <a href="#" class="articleTitle">你有多久没有翻开过一本书了？</a>
+                                </div>
+                                <div class="article-bd">
+                                    <div class="info-box">
+                                        <div class="article-info">
+                                            100%获奖！掘金读书会，与我们一起读好书～
+                                        </div>
+                                        <ul class="article-action">
+                                            <li class="likeBtn btn">
+                                                <i>
+                                                    <img src="./img/thumbUp_one.png" alt="" class="like">
+                                                </i>
+                                                <span class="thumbUp-count count"></span>
+                                            </li>
+                                            <li class="commentBtn btn">
+                                                <i>
+                                                    <img src="./img/comment-one.png" alt="">
+                                                </i>
+                                                <span class="comment-count count"></span>
+                                            </li>
+                                            <li class="dislikeBtn btn">
+                                                <i>
+                                                    <img src="./img/dislike_one.png" alt="" class="dislike">
+                                                </i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0c9249d9382745259da28c6c2612c23f~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp" alt="" class="article-pic">
+                                </div>
+                            </li>
+                            <li class="entry-list-item">
+                                <div class="article-hd ">
+                                    <div class="author">
+                                        来自格兰芬多的邦妮
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="date">2小时前</div>
+                                </div>
+                                <div class="article-title">
+                                    <a href="#" class="articleTitle">你有多久没有翻开过一本书了？</a>
+                                </div>
+                                <div class="article-bd">
+                                    <div class="info-box">
+                                        <div class="article-info">
+                                            100%获奖！掘金读书会，与我们一起读好书～
+                                        </div>
+                                        <ul class="article-action">
+                                            <li class="likeBtn btn">
+                                                <i>
+                                                    <img src="./img/thumbUp_one.png" alt="" class="like">
+                                                </i>
+                                                <span class="thumbUp-count count"></span>
+                                            </li>
+                                            <li class="commentBtn btn">
+                                                <i>
+                                                    <img src="./img/comment-one.png" alt="">
+                                                </i>
+                                                <span class="comment-count count"></span>
+                                            </li>
+                                            <li class="dislikeBtn btn">
+                                                <i>
+                                                    <img src="./img/dislike_one.png" alt="" class="dislike">
+                                                </i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0c9249d9382745259da28c6c2612c23f~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp" alt="" class="article-pic">
+                                </div>
+                            </li>
+                            <li class="entry-list-item">
+                                <div class="article-hd ">
+                                    <div class="author">
+                                        来自格兰芬多的邦妮
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="date">2小时前</div>
+                                </div>
+                                <div class="article-title">
+                                    <a href="#" class="articleTitle">你有多久没有翻开过一本书了？</a>
+                                </div>
+                                <div class="article-bd">
+                                    <div class="info-box">
+                                        <div class="article-info">
+                                            100%获奖！掘金读书会，与我们一起读好书～
+                                        </div>
+                                        <ul class="article-action">
+                                            <li class="likeBtn btn">
+                                                <i>
+                                                    <img src="./img/thumbUp_one.png" alt="" class="like">
+                                                </i>
+                                                <span class="thumbUp-count count"></span>
+                                            </li>
+                                            <li class="commentBtn btn">
+                                                <i>
+                                                    <img src="./img/comment-one.png" alt="">
+                                                </i>
+                                                <span class="comment-count count"></span>
+                                            </li>
+                                            <li class="dislikeBtn btn">
+                                                <i>
+                                                    <img src="./img/dislike_one.png" alt="" class="dislike">
+                                                </i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0c9249d9382745259da28c6c2612c23f~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp" alt="" class="article-pic">
+                                </div>
+                            </li>
+                            <li class="entry-list-item">
+                                <div class="article-hd ">
+                                    <div class="author">
+                                        来自格兰芬多的邦妮
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="date">2小时前</div>
+                                </div>
+                                <div class="article-title">
+                                    <a href="#" class="articleTitle">你有多久没有翻开过一本书了？</a>
+                                </div>
+                                <div class="article-bd">
+                                    <div class="info-box">
+                                        <div class="article-info">
+                                            100%获奖！掘金读书会，与我们一起读好书～
+                                        </div>
+                                        <ul class="article-action">
+                                            <li class="likeBtn btn">
+                                                <i>
+                                                    <img src="./img/thumbUp_one.png" alt="" class="like">
+                                                </i>
+                                                <span class="thumbUp-count count"></span>
+                                            </li>
+                                            <li class="commentBtn btn">
+                                                <i>
+                                                    <img src="./img/comment-one.png" alt="">
+                                                </i>
+                                                <span class="comment-count count"></span>
+                                            </li>
+                                            <li class="dislikeBtn btn">
+                                                <i>
+                                                    <img src="./img/dislike_one.png" alt="" class="dislike">
+                                                </i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0c9249d9382745259da28c6c2612c23f~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp" alt="" class="article-pic">
+                                </div>
+                            </li>
+                            <li class="entry-list-item">
+                                <div class="article-hd ">
+                                    <div class="author">
+                                        来自格兰芬多的邦妮
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="date">2小时前</div>
+                                </div>
+                                <div class="article-title">
+                                    <a href="#" class="articleTitle">你有多久没有翻开过一本书了？</a>
+                                </div>
+                                <div class="article-bd">
+                                    <div class="info-box">
+                                        <div class="article-info">
+                                            100%获奖！掘金读书会，与我们一起读好书～
+                                        </div>
+                                        <ul class="article-action">
+                                            <li class="likeBtn btn">
+                                                <i>
+                                                    <img src="./img/thumbUp_one.png" alt="" class="like">
+                                                </i>
+                                                <span class="thumbUp-count count"></span>
+                                            </li>
+                                            <li class="commentBtn btn">
+                                                <i>
+                                                    <img src="./img/comment-one.png" alt="">
+                                                </i>
+                                                <span class="comment-count count"></span>
+                                            </li>
+                                            <li class="dislikeBtn btn">
+                                                <i>
+                                                    <img src="./img/dislike_one.png" alt="" class="dislike">
+                                                </i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0c9249d9382745259da28c6c2612c23f~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp" alt="" class="article-pic">
+                                </div>
+                            </li>
+                            <li class="entry-list-item">
+                                <div class="article-hd ">
+                                    <div class="author">
+                                        来自格兰芬多的邦妮
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="date">2小时前</div>
+                                </div>
+                                <div class="article-title">
+                                    <a href="#" class="articleTitle">你有多久没有翻开过一本书了？</a>
+                                </div>
+                                <div class="article-bd">
+                                    <div class="info-box">
+                                        <div class="article-info">
+                                            100%获奖！掘金读书会，与我们一起读好书～
+                                        </div>
+                                        <ul class="article-action">
+                                            <li class="likeBtn btn">
+                                                <i>
+                                                    <img src="./img/thumbUp_one.png" alt="" class="like">
+                                                </i>
+                                                <span class="thumbUp-count count"></span>
+                                            </li>
+                                            <li class="commentBtn btn">
+                                                <i>
+                                                    <img src="./img/comment-one.png" alt="">
+                                                </i>
+                                                <span class="comment-count count"></span>
+                                            </li>
+                                            <li class="dislikeBtn btn">
+                                                <i>
+                                                    <img src="./img/dislike_one.png" alt="" class="dislike">
+                                                </i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0c9249d9382745259da28c6c2612c23f~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp" alt="" class="article-pic">
+                                </div>
+                            </li>
+
+
+
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="aside">
+                    <div class="sidebar sidebar-app">
+                        <img src="./img/ad.png" alt="" class="ad-img">
+                        <div class="app-stall">
+                            <img src="./img/app.png" alt="" class="app-pic">
+                            <div class="app-content">
+                                <div class="app-content-hd">下载掘金客户端</div>
+                                <div class="app-content-bd">解锁更多技术团队热招职位</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar sidebar-user">
+                        <div class="user-hd">🎖️作者榜</div>
+                        <div class="user-bd">
+                            <div class="user-item">
+                                <a href="#">
+                                    <img src="https://sf6-ttcdn-tos.pstatp.com/img/user-avatar/bfc66a5d7055015e8c7f6b7944dfe747~300x300.image" alt="">
+
+                                    <div class="user-info">
+                                        <div class="username">
+                                            <span class="name">我是十三</span>
+                                            <span class="level">
+                                                <img src="./img/lv-four.png" alt="">
+                                            </span>
+                                        </div>
+                                        <p>高级开发工程师 @ newbee-ltd</p>
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div class="user-item">
+                                <a href="#">
+                                    <img src="https://user-gold-cdn.xitu.io/2019/6/14/16b519612caadb3e?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" alt="">
+                                    <div class="user-info">
+                                        <div class="username">
+                                            <span class="name">
+                                                58沈剑_架构师之路
+                                            </span>
+                                            <span class="level">
+                                                <img src="./img/lv-four.png" alt="">
+                                            </span>
+                                        </div>
+                                        <p>
+                                            架构师 @ 58
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="user-item">
+                                <a href="#">
+                                    <img src="https://user-gold-cdn.xitu.io/2020/6/8/17291de3aedb42c7?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" alt="">
+                                    <div class="user-info">
+                                        <div class="username">
+                                            <span class="name">
+                                                XPoet
+                                            </span>
+                                            <span class="level">
+                                                <img src="./img/lv-four.png" alt="">
+                                            </span>
+                                        </div>
+                                        <p>
+                                            前端开发
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <a href="#" class="entire">
+                                <span>完整榜单</span>
+                                <i><strong></strong></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sidebar sidebar-link">
+                        <ul class="link-list">
+                            <li class="link-item">
+                                <a href="#" class="link">
+                                    <img src="./img/link-pic-one.png" alt="">
+                                    <span>掘金社区漫游指南</span>
+                                </a>
+                            </li>
+                            <li class="link-item">
+                                <a href="#" class="link">
+                                    <img src="./img/link-pic-two.png" alt="">
+                                    <span>下载掘金浏览器插件</span>
+                                </a>
+                            </li>
+                            <li class="link-item">
+                                <a href="#" class="link">
+                                    <img src="./img/link-pic-three.png" alt="">
+                                    <span>前往掘金翻译计划</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sidebar sidebar-more">
+                        <ul class="more-list">
+                            <li class="more-item" style="margin-left: 0;">
+                                <a href="#">关于</a>
+                            </li>
+                            <li class="more-item">
+                                <a href="#">营业执照</a>
+                            </li>
+                            <li class="more-item">
+                                <a href="#">友情链接</a>
+                            </li>
+                            <li class="more-item">
+                                <a href="#">更多文章</a>
+                            </li>
+                        </ul>
+                        <ul class="more-list">
+                            <li class="more-item" style="margin-left: 0;">
+                                <a href="#">用户协议</a>
+                            </li>
+                            <li class="more-item">
+                                <a href="#">隐私政策</a>
+                            </li>
+                            <li class="more-item">
+                                <a href="#">使用指南</a>
+                            </li>
+                        </ul>
+                        <ul class="more-list">
+                            <li class="more-item" style="margin-left: 0;">
+                                <a href="#">
+                                    京ICP备18012699号-3
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="more-list">
+                            <li class="more-item" style="margin-left: 0;">
+                                <a href="#">
+                                    京公网安备11010802026719号
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="more-list">
+                            <li class="more-item" style="margin-left: 0;">
+                                <a href="#">
+                                    版权所有：北京北比信息技术有限公司
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="more-list" style="height: 40px;">
+                            <li class="more-item" style="margin-left: 0;">
+                                <a href="#">
+                                    公司地址：北京市海淀区信息路甲28号13层B座13B-5
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="more-list">
+                            <li class="more-item" style="margin-left: 0;">
+                                <a href="#">
+                                    公司座机：010-83434395
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="more-list">
+                            <li class="more-item" style="margin-left: 0;">
+                                <a href="#">
+                                    举报邮箱：feedback@xitu.io
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="more-list">
+                            <li class="more-item" style="margin-left: 0;">
+                                <a href="#">
+                                    ©2021 掘金
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="platform">
+                            <li class="platform-item">
+                                <a href="#">
+                                    <img src="./img/weibo.png" alt="">
+                                </a>
+                            </li>
+                            <li class="platform-item">
+                                <a href="#">
+                                    <img src="./img/wechat.png" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 个人资料模块 -->
+    <div class="self-container main" style="display: none;">
+        <div class="main-container-box">
+            <div class="main-container-nav">
+                <ul class="nav-list">
+                    <li class="nav-item" id="backToSelf"><a href="#">返回个人主页</a> </li>
+                    <li class="nav-item"><a href="#">个人资料</a> </li>
+                    <li class="nav-item"><a href="#">账号设置</a> </li>
+                    <li class="nav-item"><a href="#">简历管理</a> </li>
+                </ul>
+            </div>
+            <div class="main-container-modify">
+                <div class="container-modify-list">
+                    <h1 class="modify-hd">个人资料</h1>
+                    <ul class="modify-bd">
+                        <li class="modify-item">
+                            <span class="title">头像</span>
+                            <div class="pic-upload">
+                                <img src="https://sf1-ttcdn-tos.pstatp.com/img/user-avatar/3ea985da5382b68e84cec9746e09e1d6~300x300.image" alt="">
+                                <div class="upload-tip">
+                                    <span>支持 jpg、png、jpeg 格式大小 5M 以内的图片</span>
+                                    <button class="upload-btn">点击上传</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="modify-item">
+                            <span class="title">用户名</span>
+                            <div class="inp-box">
+                                <input type="text" placeholder="填写你的用户名" class="inp" id="myNickname">
+                                <div class="modify">
+                                    <img src="./img/modify.png" alt="">
+                                    <span>修改</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="modify-item">
+                            <span class="title">职位</span>
+                            <div class="inp-box">
+                                <input type="text" placeholder="填写你的职位" class="inp">
+                                <div class="modify">
+                                    <img src="./img/modify.png" alt="">
+                                    <span>修改</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="modify-item">
+                            <span class="title">公司</span>
+                            <div class="inp-box">
+                                <input type="text" placeholder="填写你的公司" class="inp">
+                                <div class="modify">
+                                    <img src="./img/modify.png" alt="">
+                                    <span>修改</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="modify-item">
+                            <span class="title">个人介绍</span>
+                            <div class="inp-box">
+                                <input type="text" placeholder="填写职业技能、擅长的事情、喜欢的事情等" class="inp" id="myIntroduction">
+                                <div class="modify">
+                                    <img src="./img/modify.png" alt="">
+                                    <span>修改</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="modify-item">
+                            <span class="title">个人主页</span>
+                            <div class="inp-box">
+                                <input type="text" placeholder="填写你的个人主页" class="inp">
+                                <div class="modify">
+                                    <img src="./img/modify.png" alt="">
+                                    <span>修改</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 文章模块 -->
+    <div class="article-container main" style="display: none;">
+        <div class="main-container-box">
+            <div class="article-content">
+                <div class="article">
+                    <div class="author-info">
+                        <img src="https://sf3-ttcdn-tos.pstatp.com/img/user-avatar/9187a91e7b4dc8cd55473af9b62fc8ee~300x300.image" alt="" class="author-avatar">
+                        <div class="author-info-content">
+                            <div class="username">
+                                <a href="#">
+                                    <span class="author-name">sk22n</span>
+                                    <span class="level"><img src="./img/lv-four.png" alt=""></span>
+                                </a>
+                            </div>
+                            <div class="detail">
+                                <span>
+                                    2021年03月15日
+                                </span>
+                                <span>阅读 24945</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <h1 class="auth-arti-title">
+                        金三银四的前端社招面经
+                    </h1>
+                    <div class="article-detail" style="visibility: hidden;"></div>
+                    <div class="tip-list">
+                        <div class="tip-item">
+                            <span class="tip-item-title">文章分类</span>
+                            <a href="#" class="item">前端</a>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-item-title">文章标签</span>
+                            <a href="#" class="item">
+                                <img src="./img/JavaScript-icon.png" alt=""> JavaScript
+                            </a>
+                        </div>
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-inp">
+                            <img src="" alt="" id="myAvatar">
+                            <div class="inpBox">
+                                <div class="myInp">
+                                    <input type="text" placeholder="输入评论..." class="myComment-inp">
+                                </div>
+                                <div class="inp-tip" style="display: none;">
+                                    <div class="emoji">
+                                        <img src="./img/emoji.png" alt="">
+                                        <span>表情</span>
+                                    </div>
+                                    <div class="comment">
+                                        <span>Ctrl or ⌘ + Enter</span>
+                                        <button class="comment-btn" disabled='disabled'>评论</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="comment-list">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="aside">
+                <div class="sidebar sidebar-app">
+                    <img src="./img/ad.png" alt="" class="ad-img">
+                    <div class="app-stall">
+                        <img src="./img/app.png" alt="" class="app-pic">
+                        <div class="app-content">
+                            <div class="app-content-hd">下载掘金客户端</div>
+                            <div class="app-content-bd">解锁更多技术团队热招职位</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar sidebar-user">
+                    <div class="user-hd">关于作者</div>
+                    <div class="user-content">
+                        <div class="user-item">
+                            <img src="https://sf3-ttcdn-tos.pstatp.com/img/user-avatar/9187a91e7b4dc8cd55473af9b62fc8ee~300x300.image" alt="" class="auth-avatar">
+                            <div class="user-box">
+                                <a href="#" class="username">
+                                    <span class="author-name">sk22n</span>
+                                    <span class="level">
+                                        <img src="./img/lv-four.png" alt="" style="width: 23px; height:14px;">
+                                    </span>
+                                </a>
+                                <div class="else">打杂 @ 腾讯文档</div>
+                            </div>
+                        </div>
+                        <div class="user-attain">
+                            <span class="thumbUp">
+                                
+                            </span>
+                            <span class="content">
+                                获得点赞
+                                <i class="count">2668</i>
+                            </span>
+                        </div>
+                        <div class="user-attain">
+                            <span class="thumbUp">
+                                
+                            </span>
+                            <span class="content">
+                                获得点赞
+                                <i class="count">2668</i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fixTool">
+                <div class="like">
+                    <i class="arti-like-count"></i>
+                </div>
+                <div class="comment">
+                    <i class="arti-comment-count"></i>
+                </div>
+                <div class="collect"></div>
+                <div class="report"></div>
+                <div class="share">分享</div>
+                <div class="weibo"></div>
+                <div class="qq"></div>
+                <div class="wechat"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 写文章模块 -->
+    <div class="editor-container" style="display: none;">
+        <div class="editor-header">
+            <div class="uploadPic"></div>
+            <input type="text" class="editor-header-input" placeholder="输入文章标题...">
+            <div class="right-box">
+                <div class="auto-saved">文章将自动保存至草稿箱</div>
+                <button class="draft-btn">草稿箱</button>
+                <button class="publish-btn">发布</button>
+
+                <div class="nav-menu editor-nav-menu">
+                    <img src="" class="user" id="myAvatar">
+                    <ul class="dropdown-list" id="dropdown-list">
+                        <div class="nav-item-list">
+                            <li class="nav-item">
+                                <a href="#">写文章</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">草稿</a>
+                            </li>
+                        </div>
+                        <div class="nav-item-list">
+                            <li class="nav-item myPage">
+                                <a href="#">我的主页</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">我赞过的</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">我的小册</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">我的收藏集</a>
+                            </li>
+                        </div>
+                        <div class="nav-item-list">
+                            <li class="nav-item">
+                                <a href="#">字学</a>
+                            </li>
+                        </div>
+                        <div class="nav-item-list">
+                            <li class="nav-item">
+                                <a href="#">设置</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">关于</a>
+                            </li>
+                        </div>
+                        <div class="nav-item-list" id="logout">
+                            <li class="nav-item" id="logout">
+                                <a href="#">登出</a>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="editor-main">
+            <div class="toolbar"></div>
+            <div class="editor-body">
+                <div class="editor-inp" style="float: left;">
+                    <input class="textInp"></input>
+                </div>
+                <div class="editor-preview" style="float: left;">
+
+                    <input class="textContent"></input>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            var textInp = document.querySelector('.textInp');
+            var textContent = document.querySelector('.textContent');
+            textContent.onblur = function() {
+                var textInput = textInp.value;
+                var textContent = textContent.value;
+                axios.post('http://47.100.42.144:3389/article/writeArticle', {
+                        userId: `${catchUserId}`,
+                        title: textInput,
+                        content: textContent
+                    }).then(res => {
+                        console.log(res);
+                    })
+                    .catch(err => {
+                        console.error(err);
+                    });
+            }
+            var loginBtn = document.getElementById('login-btn');
+            var emailInp = document.getElementById('myEmail');
+            var passwordInp = document.getElementById('myPassword');
+
+            var container = document.querySelector('.container');
+            var articleContainer = document.querySelector('.article-container');
+            var coverBox = document.querySelector('.cover-box');
+
+            var logOut = document.getElementById('logout');
+
+            var navLogin = document.querySelector('.nav-login');
+            var navMenu = document.querySelector('.nav-menu');
+            var navNotify = document.querySelector('.nav-notify');
+            var dropDown = document.getElementById('dropdown-list');
+            var logout = document.getElementById('logout');
+
+            var myNickname = document.getElementById('myNickname');
+            var myIntroduction = document.getElementById('myIntroduction');
+
+            var selfUsername = document.querySelector('.self-username');
+            var selfInfo = document.querySelector('.self-info');
+
+            var myAvatar = document.querySelectorAll('#myAvatar');
+
+            var author = document.querySelectorAll('.author');
+            var articleTitle = document.querySelectorAll('.articleTitle');
+            var thumbUpCount = document.querySelectorAll('.thumbUp-count');
+            var commentCount = document.querySelectorAll('.comment-count');
+
+            var catchUserId = {};
+
+            // 登录接口start
+            function login() {
+                var email = emailInp.value;
+                var password = passwordInp.value;
+                axios.post('http://47.100.42.144:3389/user/login', {
+                        username: email,
+                        password: password
+                    }).then(res => {
+                        console.log(res);
+                        emailInp.value = '';
+                        passwordInp.value = '';
+                        catchUserId = res.data.data.userId;
+                        coverBox.style.display = 'none';
+                        navLogin.style.display = 'none';
+                        navNotify.style.display = 'block';
+                        navMenu.style.display = 'block';
+                        alert('登录成功');
+                        isLogin();
+                        getUserInfo();
+                        getArticle();
+
+
+                        getContent();
+                        getComment();
+                        getReply();
+                    })
+                    .catch(err => {
+                        console.error(err);
+                    });
+            }
+
+            function isLogin() {
+                var url = `http://47.100.42.144:3389/user/isLogin?userId=${catchUserId}`
+                axios.get(url).then(res => {
+                    console.log(res);
+                }).catch(err => {
+                    console.error(err);
+                })
+            }
+
+            loginBtn.onclick = function() {
+                login();
+            }
+
+            logout.onclick = function() {
+                    axios.post('http://47.100.42.144:3389/user/logout', {
+                            userId: `${catchUserId}`
+                        }).then(res => {
+                            console.log(res);
+                            isLogin();
+                            alert('退出登录');
+                            dropDown.style.display = 'none';
+                            navLogin.style.display = 'block';
+                            navNotify.style.display = 'none';
+                            navMenu.style.display = 'none';
+                        })
+                        .catch(err => {
+                            console.error(err);
+                        })
+                }
+                // 登录接口end
+
+            // 用户信息接口start
+            var catchSelfUserName = {};
+            var catchMyAvatar = {};
+
+            function getUserInfo() {
+                var url = `http://47.100.42.144:3389/user/getUserInfo?userId=${catchUserId}`
+                axios.get(url).then(res => {
+                    console.log(res);
+
+                    catchSelfUserName = selfUsername.innerHTML = res.data.data.nickname;
+                    selfInfo.innerHTML = res.data.data.introduction;
+                    catchMyAvatar = myAvatar.src = 'http://47.100.42.144:3389/' + res.data.data.avatar;
+                    for (var i = 0; i < myAvatar.length; i++) {
+                        myAvatar[i].src = catchMyAvatar;
+                    }
+                }).catch(err => {
+                    console.error(err);
+                })
+            }
+
+            myNickname.onblur = function() {
+                var nickname = myNickname.value;
+                axios.post('http://47.100.42.144:3389/user/changeUserInfo', {
+                    userId: `${catchUserId}`,
+                    nickname: nickname
+                }).then(res => {
+                    console.log(res);
+                }).catch(err => {
+                    console.log(err);
+                })
+            }
+
+            myIntroduction.onblur = function() {
+                    var introduction = myIntroduction.value;
+                    axios.post('http://47.100.42.144:3389/user/changeUserInfo', {
+                        userId: `${catchUserId}`,
+                        introduction: introduction
+                    }).then(res => {
+                        console.log(res);
+
+                    }).catch(err => {
+                        console.log(err);
+                    })
+                }
+                // 用户信息接口end
+
+            // 获取文章接口start
+            var catchArticle = {};
+            var catchArticleId = {};
+            var catchAuthor = {};
+            var catchTitle = {};
+            var catchthumbUpNum = {};
+            var catchcommentNum = {};
+            var catchAuthorId = {};
+
+
+
+            function getArticle() {
+                var initpage = 1;
+                var url = `http://47.100.42.144:3389/article/getArticle?userId=${catchUserId}&page=${initpage}`
+                axios.get(url).then(res => {
+                    console.log(res);
+                    catchArticle = res.data.data;
+                    console.log(catchArticle);
+                    catchArticleId = catchArticle.map(item => {
+                        return item.articleId;
+                    });
+
+                    catchAuthor = catchArticle.map(item => {
+                        return item.author;
+                    });
+                    catchTitle = catchArticle.map(item => {
+                        return item.title;
+                    });
+                    catchthumbUpNum = catchArticle.map(item => {
+                        return item.thumbUpNum;
+                    });
+                    catchcommentNum = catchArticle.map(item => {
+                        return item.commentNum;
+                    });
+                    catchAuthorId = catchArticle.map(item => {
+                        return item.authorId;
+                    });
+                    console.log(catchAuthorId);
+
+
+
+                    for (var i = 0; i < articleTitle.length; i++) {
+                        articleTitle[i].setAttribute('index', i);
+                        var index = articleTitle[i].getAttribute('index');
+                        articleTitle[index].innerHTML = catchTitle[index];
+                    }
+
+                    for (var i = 0; i < author.length; i++) {
+                        author[i].setAttribute('index', i);
+                        var index = author[i].getAttribute('index');
+                        author[index].innerHTML = catchAuthor[index];
+                    }
+                    for (var i = 0; i < thumbUpCount.length; i++) {
+                        thumbUpCount[i].setAttribute('index', i);
+                        var index = thumbUpCount[i].getAttribute('index');
+                        thumbUpCount[index].innerHTML = catchthumbUpNum[index];
+                    }
+                    for (var i = 0; i < commentCount.length; i++) {
+                        commentCount[i].setAttribute('index', i);
+                        var index = commentCount[i].getAttribute('index');
+                        commentCount[index].innerHTML = catchcommentNum[index];
+                    }
+                    getContent();
+                    getComment();
+
+                }).catch(err => {
+                    console.error(err);
+                })
+            }
+
+            var auth_Avatar = document.querySelector('.authAvatar');
+
+            var authorAvatar = document.querySelector('.author-avatar')
+            var authAvatar = document.querySelector('.auth-avatar');
+            var authorName = document.querySelectorAll('.author-name');
+            var authArtiTitle = document.querySelector('.auth-arti-title');
+            var articleDetail = document.querySelector('.article-detail');
+            var artiLikeCount = document.querySelector('.arti-like-count');
+            var artiCommentCount = document.querySelector('.arti-comment-count');
+            var authorInfo = document.querySelector('.author-info');
+
+            var catchContent = {};
+
+            for (var i = 0; i < articleTitle.length; i++) {
+                articleTitle[i].setAttribute('index', i);
+                articleTitle[i].addEventListener('click', function() {
+                    container.style.display = 'none';
+                    articleContainer.style.display = 'block';
+                    var index = this.getAttribute('index');
+                    console.log(index);
+                    getContent(index);
+                    getComment(index);
+                    getUserWriteArticles(index)
+
+                })
+            }
+
+
+            function getContent(num) {
+                var url = `http://47.100.42.144:3389/article/getContent?userId=${catchUserId}&articleId=${catchArticleId[num]}`
+                axios.get(url).then(res => {
+                    console.log(res);
+                    catchContent = res.data.data;
+                    console.log(catchContent);
+
+                    authAvatar.src = authorAvatar.src = "http://47.100.42.144:3389/" + catchContent.authorAvatar;
+
+                    for (var i = 0; i < authorName.length; i++) {
+                        authorName[i].innerHTML = catchContent.author;
+                    }
+                    authArtiTitle.innerHTML = catchContent.title;
+                    articleDetail.innerHTML = catchContent.content;
+                    artiLikeCount.innerHTML = catchContent.thumbUpNum;
+                    artiCommentCount.innerHTML = catchContent.commentNum;
+                }).catch(err => {
+                    console.log(err);
+                })
+            }
+
+
+            // 获取文章接口end
+
+            // 获取评论接口start
+            var commentlist = document.querySelector('.comment-list');
+            var commentatorAvatar = document.querySelector('.commentatorAvatar');
+            var commentator = document.querySelector('.commentator');
+            var commentContent = document.querySelector('.comment-content');
+            var userThumbUpCount = document.querySelector('.user-thumbUp-count');
+            var userReplyCount = document.querySelector('.user-reply-count');
+
+
+            var catchComment = {};
+            var catchReplierId = {};
+            var catchCommentatorAvatar = {};
+            var catchCommentId = {};
+            var catchcommentator = {};
+            var catchCommentContent = {};
+            var catchUserThumbUpCount = {};
+            var catchUserReplyCount = {};
+
+
+
+            var replyContent = document.querySelector('.reply-content');
+            var replierAvatar = document.querySelector('.replier-avatar');
+            var replier = document.querySelector('.replier');
+
+            function getComment(num) {
+                var initpage = 1;
+                var url = `http://47.100.42.144:3389/comment/getComment?userId=${catchUserId}&page=${initpage}&articleId=${catchArticleId[num]}`
+                axios.get(url).then(res => {
+                    console.log(res);
+                    catchComment = res.data.data;
+                    console.log(catchComment);
+
+                    catchCommentId = catchComment.map(item => {
+                        return item.commentId;
+                    });
+                    catchCommentatorAvatar = catchComment.map(item => {
+                        return item.commentatorAvatar;
+                    });
+                    catchcommentator = catchComment.map(item => {
+                        return item.commentator;
+                    });
+                    console.log(catchcommentator);
+                    catchCommentContent = catchComment.map(item => {
+                        return item.comment;
+                    });
+
+                    catchUserThumbUpCount = catchComment.map(item => {
+                        return item.thumbUpNum;
+                    });
+                    catchUserReplyCount = catchComment.map(item => {
+                        return item.replyNum;
+                    });
+                    var str = "";
+
+                    for (var i = 0; i < catchCommentId.length; i++) {
+                        var userReply = document.getElementsByClassName('user-reply');
+                        var myReply = document.getElementsByClassName('myReply');
+                        var myReplyInp = document.getElementsByClassName('reply-inp');
+                        var replyBtn = document.getElementsByClassName('reply-btn');
+
+                        str += "<li class='comment-item'><div class='auth-pic'><img src='http://47.100.42.144:3389/" + `${catchCommentatorAvatar[i]}` + "' class='commentatorAvatar'></div><div class='comment-detail'><div class='auth-name'><a href='#' class='commentator'>" + `${catchcommentator[i]}` + "</a></div><div class='comment-content'>" + `${catchCommentContent[i]}` + "</div><div class='upDate'><span>5天前</span><div class='reply-box'> <div class='user-dislike'><img src='./img/dislike_one.png' style='width: 16px;height: 16px;'></div><div class='user-thumbUp'><img src='./img/thumbUp_one.png' style='width: 16px;height: 16px;'><i class='user-thumbUp-count'>" + `${catchUserThumbUpCount[i]}` + "</i></div><div class='user-reply'><img src='./img/comment-one.png' style='width: 16px;height: 16px;'><i class='user-reply-count'>" + `${catchUserReplyCount[i]}` + "</i></div></div></div><div class='myReply'><div class='form-box'><input class='reply-inp' placeholer='回复...' style='width: 100%;'></input><div class='inp-tip' style='display: block;'><div class='emoji'><img src='./img/emoji.png'><span>表情</span></div><div class='comment'><span>Ctrl or ⌘ + Enter</span><button class='reply-btn'>评论</button></div></div></div></div><ul class='sub-comment-list'></ul></div></li>";
+                        commentlist.innerHTML = str;
+
+                        for (var i = 0; i < userReply.length; i++) {
+                            userReply[i].onclick = function() {
+                                this.parentNode.parentNode.nextElementSibling.style.display = 'block';
+                            }
+                        }
+                        for (var i = 0; i < myReplyInp.length; i++) {
+                            myReplyInp[i].onblur = function() {
+                                if (this.value == '') {
+                                    this.parentNode.parentNode.style.display = 'none';
+                                }
+                            }
+                            myReplyInp[i].onfocus = function() {
+                                this.nextElementSibling.lastElementChild.lastElementChild.className = 'myReply-btn';
+                            }
+                        }
+
+                        var userDislike = document.getElementsByClassName('user-dislike');
+                        for (var i = 0; i < userDislike.length; i++) {
+                            userDislike[i].setAttribute('index', i);
+                            userDislike[i].onclick = function() {
+                                var index = this.getAttribute('index');
+                                console.log(index);
+                                var initflag = true;
+                                axios.post('http://47.100.42.144:3389/comment/dislikeComment', {
+                                        userId: `${catchUserId}`,
+                                        commentId: `${catchCommentId[index]}`,
+                                        flag: `${initflag}`
+                                    }).then(res => {
+                                        console.log(res);
+                                        this.firstChild.src = './img/dislike_two.png';
+                                    })
+                                    .catch(err => {
+                                        console.error(err);
+                                    })
+                            }
+                        }
+
+                        for (var i = 0; i < replyBtn.length; i++) {
+                            replyBtn[i].setAttribute('index', i);
+                            replyBtn[i].onclick = function() {
+                                var index = this.getAttribute('index');
+                                console.log(index);
+                                var replyInp = this.parentNode.parentNode.previousSibling.value;
+                                axios.post('http://47.100.42.144:3389/reply/postReply', {
+                                        userId: `${catchUserId}`,
+                                        commentId: `${catchCommentId[index]}`,
+                                        reply: replyInp
+                                    }).then(res => {
+                                        console.log(res);
+                                        var li = document.createElement('li');
+                                        li.setAttribute("class", "comment-link");
+                                        li.innerHTML = "<div class='auth-pic'><img src='" + `${catchMyAvatar}` + "' class='replier-avatar'></div><div class='comment-link-box'><div class='replier'>" + `${catchSelfUserName}` + "</div><div class='reply-content'>" + `${replyInp}` + "</div><div class='reply'><span>5天前</span><a href='javascript:;' class='delete'>删除</a><div class='reply-box'><div class='replier-thumbUp'><img src='./img/thumbUp_one.png' style='width: 16px;height: 16px;'></div><div class='replier-reply'><img src='./img/comment-one.png' style='width: 16px;height: 16px;'></div></div></div></div>";
+
+                                        this.parentNode.parentNode.parentNode.parentNode.nextElementSibling.insertBefore(li, this.parentNode.parentNode.parentNode.parentNode.nextElementSibling.children[0]);
+                                        this.parentNode.parentNode.previousSibling.value = '';
+                                        var dele = document.getElementsByClassName('delete');
+                                        for (var i = 0; i < dele.length; i++) {
+                                            dele[i].onclick = function() {
+                                                var subCommentList = document.getElementsByClassName('sub-comment-list');
+                                                subCommentList[i].removeChild(this.parentElement.parentElement.parentElement);
+                                            }
+                                        }
+                                    })
+                                    .catch(err => {
+                                        console.error(err);
+                                    })
+                            }
+                        }
+
+                        getReply(i);
+                    };
+                }).catch(err => {
+                    console.error(err);
+                })
+            }
+
+            function getReply(num) {
+                var initpage = 1;
+                var url = `http://47.100.42.144:3389/reply/getReply?userId=${catchUserId}&page=${initpage}&commentId=${catchCommentId[num]}`
+                axios.get(url).then(res => {
+                    console.log(res);
+                    var catchReply = res.data.data;
+                    var catchReplierId = catchReply.map(item => {
+                        return item.replyId;
+                    });
+
+                    var catchReplier = catchReply.map(item => {
+                        return item.replier;
+                    });
+                    var catchReplyContent = catchReply.map(item => {
+                        return item.replyContent;
+                    });
+                    var catchReplierAvatar = catchReply.map(item => {
+                        return item.replierAvatar;
+                    });
+                    var str = "";
+                    for (var i = 0; i < catchReplierId.length; i++) {
+                        var subCommentList = document.getElementsByClassName('sub-comment-list');
+                        str += "<li class='comment-link'><div class='auth-pic'><img src='http://47.100.42.144:3389/" + `${catchReplierAvatar[i]}` + "' class='replier-avatar'></div><div class='comment-link-box'><div class='replier'>" + `${catchReplier[i]}` + "</div><div class='reply-content'>" + `${catchReplyContent[i]}` + "</div><div class='reply'><span>5天前</span><div class='reply-box'><div class='replier-thumbUp'><img src='./img/thumbUp_one.png' style='width: 16px;height: 16px;'></div><div class='replier-reply'><img src='./img/comment-one.png' style='width: 16px;height: 16px;'></div></div></div></div></li>";
+                        subCommentList[i].innerHTML = str;
+                    };
+                }).catch(err => {
+                    console.log(err);
+                })
+
+            }
+
+            // 获取评论接口end
+
+            // 点赞点踩文章start
+            var likeBtn = document.getElementsByClassName('likeBtn');
+            var dislike = document.getElementsByClassName('dislike');
+
+            for (var i = 0; i < articleTitle.length; i++) {
+                articleTitle[i].setAttribute('index', i);
+                likeBtn[i].onclick = function() {
+                    var index = this.getAttribute('index');
+                    console.log(index);
+                    var initflag = true;
+                    axios.post('http://47.100.42.144:3389/article/thumbUpArticle', {
+                            userId: `${catchUserId}`,
+                            articleId: `${catchArticleId[index]}`,
+                            flag: `${initflag}`
+                        }).then(res => {
+                            console.log(res);
+                            this.style.color = '#1d7dfa';
+                            this.lastElementChild.innerHTML = parseInt(this.lastElementChild.innerHTML) + 1;
+                        })
+                        .catch(err => {
+                            console.error(err);
+                        });
+                }
+                dislike[i].onclick = function() {
+                    var index = this.getAttribute('index');
+                    console.log(index);
+                    var initflag = true;
+                    axios.post('http://47.100.42.144:3389/article/dislikeArticle', {
+                            userId: `${catchUserId}`,
+                            articleId: `${catchArticleId[index]}`,
+                            flag: `${initflag}`
+                        }).then(res => {
+                            console.log(res);
+                            this.src = './img/dislike_two.png';
+                        })
+                        .catch(err => {
+                            console.error(err);
+                        });
+                }
+            }
+            // 点赞点踩文章end
+
+            // 发表评论接口start
+            var myCommentInp = document.querySelector('.myComment-inp');
+            var commentBtn = document.querySelector('.comment-btn');
+            var commentlist = document.querySelector('.comment-list');
+
+
+            myCommentInp.onfocus = function() {
+                this.parentElement.style.borderColor = '#007fff';
+                this.parentElement.nextElementSibling.style.display = 'block';
+            }
+            myCommentInp.onblur = function() {
+                if (myCommentInp.value == '') {
+                    myCommentInp.parentElement.style.borderColor = '#f1f1f1';
+                    myCommentInp.parentElement.nextElementSibling.style.display = 'none';
+                } else {
+                    commentBtn.className = 'myComment-btn';
+                    commentBtn.disabled = '';
+                }
+            }
+
+            for (var i = 0; i < articleTitle.length; i++) {
+                articleTitle[i].setAttribute('index', i);
+                articleTitle[i].addEventListener('click', function() {
+                    var index = this.getAttribute('index');
+                    console.log(index);
+                    commentBtn.addEventListener('click', function() {
+                        var commentInp = myCommentInp.value;
+                        axios.post('http://47.100.42.144:3389/comment/postComment', {
+                                userId: `${catchUserId}`,
+                                articleId: `${catchArticleId[index]}`,
+                                comment: commentInp
+                            }).then(res => {
+                                console.log(res);
+
+                                this.className = 'comment-btn';
+                                var li = document.createElement('li');
+                                li.setAttribute("class", "comment-item");
+                                li.innerHTML = "<div class='auth-pic'><img src='" + `${catchMyAvatar}` + "' id='myAvatar'></div> <div class='comment-detail'><div class='auth-name'><a href='#' class='self-username' style='color: #000'>" + `${catchSelfUserName}` + "</a></div><div class='myComment-content'>" + `${commentInp}` + "</div><div class='upDate'><span>5天前</span><a href='javascript:;' class='del'>删除</a><div class='reply-box'><div class='user-thumbUp'><img src='./img/thumbUp_one.png' style='width: 16px;height: 16px;'></div><div class='user-reply'><img src='./img/comment-one.png' style='width: 16px;height: 16px;'></div></div></divclass=></div>";
+
+                                commentlist.insertBefore(li, commentlist.children[0]);
+                                myCommentInp.value = '';
+                                var del = document.getElementsByClassName('del');
+                                for (var i = 0; i < del.length; i++) {
+                                    del[i].onclick = function() {
+                                        commentlist.removeChild(this.parentNode.parentNode.parentNode);
+                                    }
+                                }
+                            })
+                            .catch(err => {
+                                console.error(err);
+                            })
+                    })
+                })
+            }
+            // 发表评论end
+
+
+            // 点击用户头像start
+            var catchSubscribeMe = {};
+            var catchSubscribeMeId = {};
+            var catchSubscribeMeName = {};
+
+            function getSubscribeMe(num) {
+                var url = `http://47.100.42.144:3389/user/getSubscribeMe?userId=${catchAuthorId[num]}`
+                axios.get(url).then(res => {
+                    console.log(res);
+
+                    catchSubscribeMe = res.data.data;
+                    console.log(catchSubscribeMe);
+
+                    catchSubscribeMeId = catchSubscribeMe.map(item => {
+                        return item.subId;
+                    });
+                    catchSubscribeMeName = catchSubscribeMe.map(item => {
+                        return item.subName;
+                    });
+
+
+                    var str = "";
+
+                    for (var i = 0; i < catchSubscribeMeId.length; i++) {
+                        str += "<li class='user-item'><img src='http://47.100.42.144:3389/" + `${catchContent.authorAvatar}` + "' class='avatar'><div class='info-box'><div class='username'><span class='name' id='name'>" + `${catchSubscribeMeName[i]}` + "</span><span class='level'><img src='./img/lv-four.png' style='width: 23px;height: 14px;'></span></div><div class='detail'>「全栈修仙之路」公众号</div></div><button class='toFollow'>关注</button></li>";
+                        followedUserList.innerHTML = str;
+                    }
+
+                }).catch(err => {
+                    console.error(err);
+                })
+            }
+
+            var catchMySubscribe = {};
+            var catchMySubscribeMeId = {};
+            var catchMySubscribeName = {};
+
+            function getMySubscribe(num) {
+                var url = `http://47.100.42.144:3389/user/getMySubscribe?userId=${catchAuthorId[num]}`
+                axios.get(url).then(res => {
+                    console.log(res);
+
+                    catchMySubscribe = res.data.data;
+                    console.log(catchMySubscribe);
+
+                    catchMySubscribeId = catchMySubscribe.map(item => {
+                        return item.subId;
+                    });
+                    catchMySubscribeName = catchMySubscribe.map(item => {
+                        return item.subName;
+                    });
+
+                    var str = "";
+                    for (var i = 0; i < catchMySubscribeId.length; i++) {
+                        str += "<li class='user-item'><img src='http://47.100.42.144:3389/" + `${catchContent.authorAvatar}` + "' class='avatar'><div class='info-box'><div class='username'><span class='name' id='name'>" + `${catchMySubscribeName[i]}` + "</span><span class='level'><img src='./img/lv-four.png' style='width: 23px;height: 14px;'></span></div><div class='detail'>「全栈修仙之路」公众号</div></div><button class='toFollow'>关注</button></li>";
+                        followingUserList.innerHTML = str;
+                    }
+
+                }).catch(err => {
+                    console.error(err);
+                })
+            }
+            var catchAuthContent = {};
+            var catchUserWrite = {};
+            var catchWriteId = {};
+            var catchWriteAuthor = {};
+            var catchWritetitle = {};
+            var catchWritecontent = {};
+            var catchWritecommentNum = {};
+            var catchWritethumbUpNum = {};
+
+            function getUserWriteArticles(num) {
+                var url = `http://47.100.42.144:3389/user/getUserWriteArticles?userId=${catchAuthorId[num]}`
+                axios.get(url).then(res => {
+                    console.log(res);
+
+                    catchUserWrite = res.data.data;
+                    console.log(catchUserWrite);
+
+                    catchWriteId = catchUserWrite.map(item => {
+                        return item.articleId;
+                    });
+                    catchWriteAuthor = catchUserWrite.map(item => {
+                        return item.author;
+                    });
+                    catchWritetitle = catchUserWrite.map(item => {
+                        return item.title;
+                    });
+
+                    catchWritecontent = catchUserWrite.map(item => {
+                        return item.content;
+                    });
+
+                    catchWritethumbUpNum = catchUserWrite.map(item => {
+                        return item.thumbUpNum;
+                    });
+                    catchWritecommentNum = catchUserWrite.map(item => {
+                        return item.commentNum;
+                    });
+
+                    var str = "";
+
+                    for (var i = 0; i < catchWriteId.length; i++) {
+
+                        str += " <li class='article-body-item'><div class='meta-container'><div class='message'>" + `${catchWriteAuthor[i]}` + "</div><div class='divide'></div><div class='date'>一天前</div></div><div class='title-row'><a href='#' class='authArticle-title'>" + `${catchWritetitle[i]}` + "</a></div><div class='main-row'><div class='abstract'>" + `${catchWritecontent[i]}` + "</div><ul class='action-list'><li class='likeItem item'><i></i><span class='likeItem-count'>" + `${catchWritethumbUpNum[i]}` + "</span></li><li class='commentItem item'><i></i><span class='commentItem-count'>" + `${catchWritecommentNum[i]}` + "</span></li></ul></div></li>";
+                        articleBodyList.innerHTML = str;
+
+                    }
+                    var authArticleTitle = document.getElementsByClassName('authArticle-title');
+
+                    for (var i = 0; i < authArticleTitle.length; i++) {
+                        authArticleTitle[i].setAttribute('index', i);
+                        authArticleTitle[i].addEventListener('click', function() {
+                            information.style.display = 'none';
+                            articleContainer.style.display = 'block';
+                            var index = this.getAttribute('index');
+                            console.log(index);
+                            axios.get(`http://47.100.42.144:3389/article/getContent?userId=${catchAuthorId[catchWriteAuthor[index]]}&articleId=${catchArticleId[catchWriteId[index]]}`).then(res => {
+                                console.log(res);
+                                catchAuthContent = res.data.data;
+                                console.log(catchAuthContent);
+
+                                authAvatar.src = authorAvatar.src = "http://47.100.42.144:3389/" + catchContent.authorAvatar;
+
+                                for (var i = 0; i < authorName.length; i++) {
+                                    authorName[i].innerHTML = catchAuthContent.author;
+                                }
+                                authArtiTitle.innerHTML = catchAuthContent.title;
+                                articleDetail.innerHTML = catchAuthContent.content;
+                                artiLikeCount.innerHTML = catchAuthContent.thumbUpNum;
+                                artiCommentCount.innerHTML = catchAuthContent.commentNum;
+                            }).catch(err => {
+                                console.log(err);
+                            })
+
+
+                        })
+                    }
+                }).catch(err => {
+                    console.error(err);
+                })
+            }
+
+
+            var catchUserLike = {};
+            var catchLikeId = {};
+            var catchLikeAuthor = {};
+            var catchLiketitle = {};
+            var catchLikecontent = {};
+            var catchLikecommentNum = {};
+            var catchLikethumbUpNum = {};
+
+            function getUserLikeArticles(num) {
+                var url = `http://47.100.42.144:3389/user/getUserLikeArticles?userId=${catchAuthorId[num]}`
+                axios.get(url).then(res => {
+                    console.log(res);
+
+                    catchUserLike = res.data.data;
+                    console.log(catchUserLike);
+
+                    catchLikeId = catchUserLike.map(item => {
+                        return item.articleId;
+                    });
+                    catchLikeAuthor = catchUserLike.map(item => {
+                        return item.author;
+                    });
+                    catchLiketitle = catchUserLike.map(item => {
+                        return item.title;
+                    });
+
+                    catchLikecontent = catchUserLike.map(item => {
+                        return item.content;
+                    });
+
+                    catchLikethumbUpNum = catchUserLike.map(item => {
+                        return item.thumbUpNum;
+                    });
+                    catchLikecommentNum = catchUserLike.map(item => {
+                        return item.commentNum;
+                    });
+
+                    var str = "";
+
+                    for (var i = 0; i < catchLikeId.length; i++) {
+                        str += " <li class='like-body-item'><div class='meta-container'><div class='message'>" + `${catchLikeAuthor[i]}` + "</div><div class='divide'></div><div class='date'>一天前</div></div><div class='title-row'><a href='#' class='authArticle-title'>" + `${catchLiketitle[i]}` + "</a></div><div class='main-row'><div class='abstract'>" + `${catchLikecontent[i]}` + "</div><ul class='action-list'><li class='likeItem item'><i></i><span class='likeItem-count'>" + `${catchLikethumbUpNum[i]}` + "</span></li><li class='commentItem item'><i></i><span class='commentItem-count'>" + `${catchLikecommentNum[i]}` + "</span></li></ul></div></li>";
+                        likeBodyList.innerHTML = str;
+                    }
+
+                }).catch(err => {
+                    console.error(err);
+                })
+            }
+
+            function getAuthInfo(num) {
+                var url = `http://47.100.42.144:3389/user/getUserInfo?userId=${catchAuthorId[num]}`
+                axios.get(url).then(res => {
+                    console.log(res);
+
+                    selfUsername.innerHTML = res.data.data.nickname;
+                    selfInfo.innerHTML = res.data.data.introduction;
+                    auth_Avatar.src = 'http://47.100.42.144:3389/' + res.data.data.avatar;
+
+                }).catch(err => {
+                    console.error(err);
+                })
+            }
+
+            // 点击用户头像end
+            // 关注取关用户start
+
+            var selfContainer = document.querySelector('.self-container');
+            var information = document.querySelector('.self-information');
+            var articleBodyList = document.querySelector('.article-body-list');
+            var likeBodyList = document.querySelector('.like-body-list');
+
+            var followingUserList = document.querySelector('.following-user-list');
+            var followedUserList = document.querySelector('.followed-user-list');
+
+            for (var i = 0; i < articleTitle.length; i++) {
+                articleTitle[i].setAttribute('index', i);
+                articleTitle[i].addEventListener('click', function() {
+                    var index = this.getAttribute('index');
+                    console.log(index);
+                    authorAvatar.onclick = function() {
+                        articleContainer.style.display = 'none';
+                        information.style.display = 'block';
+                        getAuthInfo(index);
+                        getUserWriteArticles(index);
+                        getUserLikeArticles(index);
+                        getSubscribeMe(index);
+                        getMySubscribe(index);
+                    }
+                })
+
+            }
+            for (var i = 0; i < articleTitle.length; i++) {
+                articleTitle[i].setAttribute('index', i);
+                articleTitle[i].addEventListener('click', function() {
+                    var followBtn = document.createElement('button');
+                    followBtn.setAttribute('class', 'follow-btn');
+                    authorInfo.appendChild(followBtn);
+                    followBtn.innerHTML = '关注';
+                    var index = this.getAttribute('index');
+                    console.log(index);
+                    followBtn.addEventListener('click', function() {
+                        axios.post('http://47.100.42.144:3389/user/subscribeSomeone', {
+                                userId: `${catchUserId}`,
+                                subscribeId: `${catchAuthorId[index]}`
+                            }).then(res => {
+                                console.log(res);
+                                followBtn.className = 'followed-btn';
+                                followBtn.innerHTML = '已关注';
+                                followBtn.disabled = true;
+
+                                var li = document.createElement('li');
+                                li.setAttribute("class", "user-item");
+                                li.innerHTML = "<img src='http://47.100.42.144:3389/" + `${catchContent.authorAvatar}` + "' class='avatar'><div class='info-box'><div class='username'><span class='name' id='name'>" + `${catchContent.author}` + "</span><span class='level'><img src='./img/lv-four.png' style='width: 23px;height: 14px;'></span></div><div class='detail'>「全栈修仙之路」公众号</div></div><button class='follow'>已关注</button>";
+                                followingUserList.appendChild(li);
+                            })
+                            .catch(err => {
+                                console.error(err);
+                            })
+                    })
+
+                })
+            }
+
+
+
+
+
+            // 关注取关用户end
+
+            // 菜单栏start
+            var addBtn = document.querySelector('.add-btn');
+            var editorContainer = document.querySelector('.editor-container');
+            var mainHeader = document.querySelector('.main-header');
+
+            addBtn.onclick = function() {
+                isLogin();
+                getUserInfo();
+                mainHeader.style.display = 'none';
+                container.style.display = 'none';
+                information.style.display = 'none';
+                selfContainer.style.display = 'none';
+                editorContainer.style.display = 'block';
+            }
+
+            var homePage = document.getElementById('homePage');
+
+            homePage.onclick = function() {
+                    isLogin();
+                    getUserInfo();
+                    information.style.display = 'none';
+                    selfContainer.style.display = 'none';
+                    articleContainer.style.display = 'none';
+                    container.style.display = 'block';
+                }
+                // 菜单栏end
+        })
+    </script>
+
+</body>
+
+</html>
+
+</html>
